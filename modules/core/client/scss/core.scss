@@ -1,0 +1,17 @@
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
+@import 'styles/variables';
+@import 'styles/header';
+// .navbar-header {
+//     color: red;
+// }
+.nav > li > a > img {
+    max-width: 18px;
+}
+header {
+    position: relative;
+}
+
+body {
+  background-color: #F5F5F5;
+  font-family: 'Roboto';
+}

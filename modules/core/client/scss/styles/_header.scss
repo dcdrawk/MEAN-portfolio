@@ -1,0 +1,57 @@
+header {
+    background-color: $teal-500;
+    height: 176px;
+    margin-bottom: 24px;
+    #page-header {
+      height:128px;
+    }
+    h1 {
+        margin-top: 56px;
+        color: $white;
+    }
+    md-tabs .md-tab {
+      color: rgba(255,255,255,.5);
+      font-weight: 400;
+    }
+    .md-tab.md-active {
+      color: $white;
+      font-weight: 500;
+    }
+    md-tabs md-ink-bar {
+      color: $white;
+      background: $white;
+    }
+    #navigation-bar {
+      background-color: $teal-600;
+    }
+}
+.user-menu {
+  float: right;
+  height: 48px;
+  color: $white;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+   md-icon {
+     color: $white;
+   }
+  .user-menu-text {
+    display: inline-block;
+    padding: 12px 12px 12px 12px;
+    font-weight: 500;
+  }
+  .profile-pic {
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+
+.user-menu-dropdown {
+  a:hover, a:focus{
+    color: rgba(0, 0, 0, 0.87);
+  }
+}

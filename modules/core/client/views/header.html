@@ -1,0 +1,64 @@
+<section id="page-header" class="container">
+  <h1 class="page-title md-display-1">Devin Cook</h1>
+</section>
+<section id="navigation-bar" ng-controller="HeaderController">
+  <div class="container">
+    <div class="user-menu" ng-show="authentication.user">
+      <span class="profile-pic">
+        <img ng-src="{{authentication.user.profileImageURL}}" />
+      </span>
+      <span class="user-menu-text">
+        <span ng-bind="authentication.user.username"></span>
+      </span>
+
+      <md-menu md-position-mode="target-right target" md-offset="-216 56">
+        <md-button  md-menu-origin  aria-label="open user menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+          <md-icon class="material-icons">more_vert</md-icon>
+        </md-button>
+        <md-menu-content width="4" class="user-menu-dropdown">
+          <md-menu-item>
+            <md-button ng-click="go('settings.profile')">
+              <md-icon class="material_icons" md-menu-align-target>person</md-icon>
+              Edit Profile
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.picture')">
+              <md-icon class="material_icons" md-menu-align-target>photo</md-icon>
+              Change Profile Picture
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.password')">
+              <md-icon class="material_icons" md-menu-align-target>security</md-icon>
+              Change Password
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.accounts')">
+              <md-icon class="material_icons" md-menu-align-target>share</md-icon>
+              Manage Social Accounts
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button href="/api/auth/signout" target="_self">
+              <md-icon class="material_icons" md-menu-align-target>exit_to_app</md-icon>
+              Sign Out
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+    </div>
+    <md-tabs md-stretch-tabs md-selected="selectedIndex">
+      <md-tab ui-sref="home">Home</md-tab>
+      <md-tab ui-sref="articles.list">PortFolio</md-tab>
+      <md-tab ui-sref="articles.list">Articles</md-tab>
+      <md-tab ui-sref="articles.list">Contact</md-tab>
+      <md-tab ui-sref="chat" ng-if="authentication.user">Chat</md-tab>
+      <md-tab ui-sref="authentication.signup" ng-if="!authentication.user">Sign Up</md-tab>
+      <md-tab ui-sref="authentication.signin" ng-if="!authentication.user">Sign In</md-tab>
+    </md-tabs>
+  </div>
+</section>

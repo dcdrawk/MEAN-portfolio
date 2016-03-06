@@ -26,6 +26,6 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 
     $scope.go = function(state) {
       $state.go(state);
-    }
+    };
   }
 ]);

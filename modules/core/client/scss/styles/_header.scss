@@ -1,12 +1,13 @@
 header {
     background-color: $teal-500;
+    color: $white;
     height: 176px;
     margin-bottom: 24px;
     #page-header {
       height:128px;
     }
     h1 {
-        margin-top: 56px;
+        margin-top: 32px;
         color: $white;
     }
     md-tabs .md-tab {

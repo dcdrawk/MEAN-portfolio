@@ -1,6 +1,6 @@
 <section ng-controller="ArticlesController" ng-init="find()">
   <!-- <div class="page-header"> -->
-    <h2 class="md-display-1">Articles</h2>
+  <h2 class="md-display-1">Articles</h2>
   <!-- </div> -->
   <!-- <div class="list-group">
     <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
@@ -15,23 +15,25 @@
     </a>
   </div> -->
   <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
-    No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
+    No articles yet, why don't you
+    <a ui-sref="articles.create">create one</a>?
   </div>
   <md-button class="md-accent md-raised md-fab add-button" ng-if="authentication.user" ui-sref="articles.create">
     <md-icon class="material_icons">add</md-icon>
   </md-button>
-  <div layout="column" class="clear-both">
-
-  <md-card ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="md-padding article-card">
-    <h4 ng-bind="article.title"></h4>
-    <small>
-      Posted on
-      <span ng-bind="article.created | date:'mediumDate'"></span>
-      by
-      <span ng-bind="article.user.displayName"></span>
-    </small>
-    <md-divider></md-divider>
-    <p class="article-content" ng-bind="article.content"></p>
-  </md-card>
-</div>
+  <div layout="row" layout-fill  layout-wrap class="clear-both">
+    <div flex="33" ng-repeat="article in articles">
+      <md-card  ui-sref="articles.view({articleId: article._id})" class="md-padding">
+        <h4 ng-bind="article.title"></h4>
+        <small>
+          Posted on
+          <span ng-bind="article.created | date:'mediumDate'"></span>
+          by
+          <span ng-bind="article.user.displayName"></span>
+        </small>
+        <md-divider></md-divider>
+        <p class="article-content" ng-bind="article.content"></p>
+      </md-card>
+    </div>
+  </div>
 </section>

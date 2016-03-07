@@ -13,8 +13,8 @@
         })
         // If you specify less than all of the keys, it will inherit from the
         // default shades
-        .accentPalette('orange', {
-          'default': '800' // use shade 200 for default, and keep all other shades the same
+        .accentPalette('amber', {
+          'default': '500' // use shade 200 for default, and keep all other shades the same
         });
     });
 })();

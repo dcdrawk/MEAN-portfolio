@@ -60,6 +60,10 @@ header {
 header {
   position: relative; }
 
+html, body {
+  height: auto;
+  min-height: 100vh; }
+
 body {
   background-color: #F5F5F5;
   font-family: 'Roboto'; }

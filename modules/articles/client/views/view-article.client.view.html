@@ -3,6 +3,10 @@
   <div class="content-buttons" ng-show="authentication.user._id == article.user._id">
     <md-button class="md-accent md-raised" ng-if="authentication.user" ng-click="edit(article);">
       <!-- <md-icon class="material_icons">edit</md-icon> -->
+      new
+    </md-button>
+    <md-button class="md-accent md-raised" ng-if="authentication.user" ng-click="edit(article);">
+      <!-- <md-icon class="material_icons">edit</md-icon> -->
       edit
     </md-button>
     <md-button class="md-warn md-raised" ng-if="authentication.user" ng-click="remove();">

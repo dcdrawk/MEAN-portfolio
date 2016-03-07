@@ -21,8 +21,8 @@
   <md-button class="md-accent md-raised md-fab add-button" ng-if="authentication.user" ui-sref="articles.create">
     <md-icon class="material_icons">add</md-icon>
   </md-button>
-  <div layout="row" layout-fill  layout-wrap class="clear-both">
-    <div flex="33" ng-repeat="article in articles">
+  <div layout="row" layout-fill layout-wrap class="clear-both">
+    <div flex="50" ng-repeat="article in articles">
       <md-card  ui-sref="articles.view({articleId: article._id})" class="md-padding">
         <h4 ng-bind="article.title"></h4>
         <small>

@@ -4,7 +4,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
   function ($scope, $state, Authentication, Menus, $timeout) {
 
 
-    $timeout( function() {
+    $timeout(function() {
       $scope.currentState = $state.$current.name;
       console.log($state);
     }, 0);

@@ -1,27 +1,22 @@
-<section ng-controller="ArticlesController" ng-init="findOne()">
+<section>
 
-  <div class="content-buttons" ng-show="authentication.user._id == article.user._id">
-    <md-button class="md-accent md-raised" ng-if="authentication.user" ng-click="edit(article);">
-      <!-- <md-icon class="material_icons">edit</md-icon> -->
-      new
-    </md-button>
-    <md-button class="md-accent md-raised" ng-if="authentication.user" ng-click="edit(article);">
-      <!-- <md-icon class="material_icons">edit</md-icon> -->
+  <div class="content-buttons" ng-show="vm.authentication.user._id == vm.article.user._id">
+
+    <md-button class="md-accent md-raised" ng-if="vm.authentication.user" ng-click="vm.edit(vm.article);">
       edit
     </md-button>
-    <md-button class="md-warn md-raised" ng-if="authentication.user" ng-click="remove();">
-      <!-- <md-icon class="material_icons">edit</md-icon> -->
+    <md-button class="md-warn md-raised" ng-if="vm.authentication.user" ng-click="vm.remove();">
       delete
     </md-button>
   </div>
 
-  <h2 class="md-display-1" ng-bind="article.title"></h1>
+  <h2 class="md-display-1" ng-bind="vm.article.title"></h1>
   <small>
     <em class="text-muted">
       Posted on
-      <span ng-bind="article.created | date:'mediumDate'"></span>
+      <span ng-bind="vm.article.created | date:'mediumDate'"></span>
       by
-      <span ng-bind="article.user.displayName"></span>
+      <span ng-bind="vm.article.user.displayName"></span>
     </em>
   </small>
 
@@ -51,7 +46,7 @@
         <span ng-bind="article.user.displayName"></span>
       </em>
     </small> -->
-      <p class="md-body-1 article-content" ng-bind="article.content"></p>
+      <p class="md-body-1 article-content" ng-bind="vm.article.content"></p>
     </md-card>
   </div>
 </section>

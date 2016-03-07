@@ -11,6 +11,7 @@
   function PortfolioController($location, Authentication, Portfolio) {
     var vm = this;
     vm.authentication = Authentication;
+    vm.test = 'test';
 
     vm.create = function (isValid, item) {
       vm.error = null;
@@ -42,7 +43,7 @@
     activate();
 
     function activate() {
-      vm.portfolioItems = Portfolio.query();
+      vm.portfolioList = Portfolio.query();
     }
   }
 })();

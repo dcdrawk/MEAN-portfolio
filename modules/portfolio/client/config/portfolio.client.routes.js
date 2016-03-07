@@ -13,7 +13,8 @@ angular.module('portfolio').config(['$stateProvider',
       .state('portfolio.list', {
         url: '',
         templateUrl: 'modules/portfolio/client/views/list.html',
-        controller: 'PortfolioController'
+        controller: 'PortfolioController',
+        controllerAs: 'vm'
       })
       .state('portfolio.create', {
         url: '/create',

@@ -1,29 +1,16 @@
-<section ng-controller="ArticlesController" ng-init="find()">
-  <!-- <div class="page-header"> -->
+<section>
   <h2 class="md-display-1">Articles</h2>
-  <!-- </div> -->
-  <!-- <div class="list-group">
-    <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="article.created | date:'mediumDate'"></span>
-        by
-        <span ng-bind="article.user.displayName"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <p class="list-group-item-text" ng-bind="article.content"></p>
-    </a>
-  </div> -->
-  <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
-    No articles yet, why don't you
-    <a ui-sref="articles.create">create one</a>?
-  </div>
-  <md-button class="md-accent md-raised md-fab add-button" ng-if="authentication.user" ui-sref="articles.create">
+  <md-button class="md-accent md-raised md-fab add-button" ng-if="vm.authentication.user" ui-sref="articles.create">
     <md-icon class="material_icons">add</md-icon>
   </md-button>
   <div layout="row" layout-fill layout-wrap class="clear-both">
-    <div flex="50" ng-repeat="article in articles">
-      <md-card  ui-sref="articles.view({articleId: article._id})" class="md-padding">
+    <div flex="100" ng-if="vm.articles.$resolved && !vm.articles.length">
+      <md-card ui-sref="vm.articles.create" class="md-padding">
+        No articles yet, why don't you create one?
+      </md-card>
+    </div>
+    <div flex="100" ng-repeat="article in vm.articles">
+      <md-card ui-sref="articles.view({articleId: article._id})" class="md-padding">
         <h4 ng-bind="article.title"></h4>
         <small>
           Posted on
@@ -31,7 +18,7 @@
           by
           <span ng-bind="article.user.displayName"></span>
         </small>
-        <md-divider></md-divider>
+        <md-divider class="margin-v"></md-divider>
         <p class="article-content" ng-bind="article.content"></p>
       </md-card>
     </div>

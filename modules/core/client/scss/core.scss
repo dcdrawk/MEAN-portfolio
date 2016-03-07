@@ -2,6 +2,7 @@
 @import 'styles/variables';
 @import 'styles/header';
 @import 'styles/buttons';
+@import 'styles/layout';
 // .navbar-header {
 //     color: red;
 // }
@@ -15,4 +16,8 @@ header {
 body {
   background-color: #F5F5F5;
   font-family: 'Roboto';
+}
+
+.clear-both {
+  clear:both;
 }

@@ -1,10 +1,11 @@
 'use strict';
 
 // Articles controller
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-  function ($scope, $stateParams, $location, Authentication, Articles) {
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$state', '$location', 'Authentication', 'Articles',
+  function ($scope, $stateParams, $state, $location, Authentication, Articles) {
     $scope.authentication = Authentication;
-
+    $scope.demo = {};
+    $scope.demo.isOpen = false;
     // Create new Article
     $scope.create = function (isValid) {
       $scope.error = null;
@@ -31,6 +32,12 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       }, function (errorResponse) {
         $scope.error = errorResponse.data.message;
       });
+    };
+
+    // Edit existing Article
+    $scope.edit = function (article) {
+      console.log(article);
+      $state.go('articles.edit', {"articleId": article._id });
     };
 
     // Remove existing Article

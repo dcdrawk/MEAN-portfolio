@@ -16,7 +16,8 @@ header {
     font-weight: 500; }
   header md-tabs md-ink-bar {
     color: #fff;
-    background: #fff; }
+    background: #FFC107;
+    height: 4px; }
   header #navigation-bar {
     background-color: #00897B; }
 
@@ -43,10 +44,15 @@ header {
 .user-menu-dropdown a:hover, .user-menu-dropdown a:focus {
   color: rgba(0, 0, 0, 0.87); }
 
-.add-button {
+.add-button, .options-speed-dial, .content-buttons {
   float: right;
-  left: -96px;
-  top: -24px; }
+  left: -16px;
+  top: -24px;
+  margin-bottom: -62px; }
+
+.no-margin-h {
+  margin-left: 0;
+  margin-right: 0; }
 
 .nav > li > a > img {
   max-width: 18px; }
@@ -57,5 +63,8 @@ header {
 body {
   background-color: #F5F5F5;
   font-family: 'Roboto'; }
+
+.clear-both {
+  clear: both; }
 
 /*# sourceMappingURL=core.css.map */

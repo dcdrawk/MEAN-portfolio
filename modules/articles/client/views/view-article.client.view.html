@@ -1,15 +1,17 @@
 <section ng-controller="ArticlesController" ng-init="findOne()">
-  <div class="page-header">
-    <h1 ng-bind="article.title"></h1>
+
+  <div class="content-buttons" ng-show="authentication.user._id == article.user._id">
+    <md-button class="md-accent md-raised" ng-if="authentication.user" ng-click="edit(article);">
+      <!-- <md-icon class="material_icons">edit</md-icon> -->
+      edit
+    </md-button>
+    <md-button class="md-warn md-raised" ng-if="authentication.user" ng-click="remove();">
+      <!-- <md-icon class="material_icons">edit</md-icon> -->
+      delete
+    </md-button>
   </div>
-  <div class="pull-right" ng-show="authentication.user._id == article.user._id">
-    <a class="btn btn-primary" ui-sref="articles.edit({articleId: article._id})">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="remove();">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
+
+  <h2 class="md-display-1" ng-bind="article.title"></h1>
   <small>
     <em class="text-muted">
       Posted on
@@ -18,5 +20,34 @@
       <span ng-bind="article.user.displayName"></span>
     </em>
   </small>
-  <p class="lead" ng-bind="article.content"></p>
+
+
+
+
+  <!-- <div class="pull-right" ng-show="authentication.user._id == article.user._id">
+    <a class="btn btn-primary" ui-sref="articles.edit({articleId: article._id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove();">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <div class="clearfix">
+  <!-- </div> -->
+
+  <div class="clearfix"></div>
+  <div layout="column">
+
+    <md-card class="md-padding no-margin-h">
+      <!-- <small>
+      <em class="text-muted">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="article.user.displayName"></span>
+      </em>
+    </small> -->
+      <p class="md-body-1 article-content" ng-bind="article.content"></p>
+    </md-card>
+  </div>
 </section>

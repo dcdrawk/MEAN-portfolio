@@ -3,6 +3,8 @@
 @import 'styles/header';
 @import 'styles/buttons';
 @import 'styles/layout';
+@import 'styles/page-header';
+@import 'styles/backgrounds';
 // .navbar-header {
 //     color: red;
 // }
@@ -20,6 +22,7 @@ html, body {
 body {
   background-color: #F5F5F5;
   font-family: 'Roboto';
+  z-index: 1;
 }
 
 .clear-both {

@@ -41,3 +41,11 @@ md-input-container.input-content {
     line-height: 24px
   }
 }
+
+.article-background {
+  // background: url('/modules/articles/client/img/notebook.jpg');
+}
+.portfolio-background {
+  background: url('/modules/articles/client/img/mountains.jpg');
+  -webkit-filter: grayscale(1) brightness(1.4)!important;
+}

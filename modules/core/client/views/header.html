@@ -6,16 +6,22 @@
    <!-- {{currentState}} -->
   <div class="container">
     <div class="user-menu" ng-show="authentication.user">
-      <span class="profile-pic">
+      <!-- <span class="profile-pic">
         <img ng-src="{{authentication.user.profileImageURL}}" />
       </span>
       <span class="user-menu-text">
         <span ng-bind="authentication.user.username"></span>
-      </span>
+      </span> -->
 
-      <md-menu md-position-mode="target-right target" md-offset="-216 56">
-        <md-button  md-menu-origin  aria-label="open user menu" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
-          <md-icon class="material-icons">more_vert</md-icon>
+      <md-menu md-position-mode="target-right target" md-offset="-216 64">
+        <md-button class="no-margin" md-menu-origin  aria-label="open user menu" ng-click="openMenu($mdOpenMenu, $event)">
+          <!-- <md-icon class="material-icons">more_vert</md-icon> -->
+          <span class="profile-pic">
+            <img ng-src="{{authentication.user.profileImageURL}}" />
+          </span>
+          <span class="user-menu-text">
+            <span ng-bind="authentication.user.username"></span>
+          </span>
         </md-button>
         <md-menu-content width="4" class="user-menu-dropdown">
           <md-menu-item>
@@ -53,7 +59,7 @@
       </md-menu>
 
     </div>
-    <md-tabs md-stretch-tabs md-selected="selectedIndex">
+    <md-tabs md-stretch-tabs>
       <!-- <md-tab ui-sref="home">Home</md-tab>
       <md-tab ui-sref="articles.list">PortFolio</md-tab>
       <md-tab ui-sref="articles.list">Articles</md-tab>

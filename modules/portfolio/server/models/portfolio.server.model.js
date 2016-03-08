@@ -20,9 +20,30 @@ var PortfolioSchema = new Schema({
     trim: true,
     required: 'Title cannot be blank'
   },
+  subtitle: {
+    type: String,
+    default: '',
+    trim: true,
+    required: 'Subtitle cannot be blank'
+  },
+  date: {
+    type: String,
+    default: '',
+    trime: true
+  },
   content: {
     type: String,
     default: '',
+    trim: true
+  },
+  youtubeLink: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  tags: {
+    type: Array,
+    default: [],
     trim: true
   },
   user: {

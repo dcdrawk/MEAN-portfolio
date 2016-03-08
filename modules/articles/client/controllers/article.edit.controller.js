@@ -1,35 +1,35 @@
 (function() {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('articles')
-        .controller('ArticleEditController', ArticleEditController);
+  angular
+    .module('articles')
+    .controller('ArticleEditController', ArticleEditController);
 
-    // ArticleViewController.$inject = ['dependencies'];
+  // ArticleViewController.$inject = ['dependencies'];
 
-    /* @ngInject */
-    function ArticleEditController($location, $state, Authentication, article, $scope) {
-        var vm = this;
-        vm.authentication = Authentication;
-        vm.article = article;
+  /* @ngInject */
+  function ArticleEditController($location, $state, Authentication, article, $scope) {
+    var vm = this;
+    vm.authentication = Authentication;
+    vm.article = article;
 
-        // Update existing Article
-        vm.update = function (isValid) {
-          vm.error = null;
+    // Update existing Article
+    vm.update = function(isValid) {
+      vm.error = null;
 
-          if (!isValid) {
-            $scope.$broadcast('show-errors-check-validity', 'articleForm');
+      if (!isValid) {
+        $scope.$broadcast('show-errors-check-validity', 'articleForm');
 
-            return false;
-          }
+        return false;
+      }
 
-          var article = vm.article;
+      var article = vm.article;
 
-          article.$update(function () {
-            $location.path('articles/' + article._id);
-          }, function (errorResponse) {
-            vm.error = errorResponse.data.message;
-          });
-        };
-    }
+      article.$update(function() {
+        $location.path('articles/' + article._id);
+      }, function(errorResponse) {
+        vm.error = errorResponse.data.message;
+      });
+    };
+  }
 })();

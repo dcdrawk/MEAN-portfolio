@@ -2,7 +2,7 @@ header {
     background-color: $teal-500;
     color: $white;
     height: 176px;
-    margin-bottom: 24px;
+    // margin-bottom: 24px;
     #page-header {
       height:128px;
     }
@@ -39,7 +39,7 @@ header {
    }
   .user-menu-text {
     display: inline-block;
-    padding: 12px 12px 12px 12px;
+    padding: 6px;
     font-weight: 500;
   }
   .profile-pic {

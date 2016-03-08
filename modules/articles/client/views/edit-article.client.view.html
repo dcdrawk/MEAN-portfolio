@@ -1,5 +1,7 @@
-<section>
-  <h2 class="md-display-1">Edit Article</h2>
+<section class="container">
+  <div class="heading">
+    <h2 class="md-display-1">Edit Article</h2>
+  </div>
   <md-card class="md-padding no-margin-h">
     <form name="articleForm" novalidate>
       <fieldset layout="row" layout-wrap>
@@ -15,10 +17,10 @@
       </fieldset>
     </form>
   </md-card>
-  <div layout="row"  layout-align="start center">
+  <div layout="row" layout-align="start center">
 
-  <md-button class="md-raised md-accent" ng-click="vm.update(articleForm.$valid);">
-    Update
-  </md-button>
+    <md-button class="md-raised md-accent" ng-click="vm.update(articleForm.$valid);">
+      Update
+    </md-button>
   </div>
 </section>

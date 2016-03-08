@@ -7,6 +7,7 @@ module.exports = {
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/angular-material/angular-material.css',
+        'public/lib/ngWig/dist/css/ng-wig.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -20,7 +21,8 @@ module.exports = {
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/angular-aria/angular-aria.js',
         'public/lib/angular-material/angular-material.js',
-        'public/lib/angular-lazytube/angular-lazytube.js'
+        'public/lib/angular-lazytube/angular-lazytube.js',
+        'public/lib/ngWig/dist/ng-wig.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

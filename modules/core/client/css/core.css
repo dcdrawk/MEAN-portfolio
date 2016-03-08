@@ -70,6 +70,25 @@ header {
 .padding-l {
   padding-left: 16px; }
 
+.padding-b {
+  padding-bottom: 16px; }
+
+.no-padding-r {
+  padding-right: 0; }
+
+.no-padding-l {
+  padding-left: 0; }
+
+.no-padding-v {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.no-padding-t {
+  padding-top: 0; }
+
+.no-padding-b {
+  padding-bottom: 0; }
+
 .heading {
   display: flex; }
   .heading h2 {

@@ -1,6 +1,17 @@
 <section class="container">
+  <!-- Content Edit Buttons -->
+  <div class="content-buttons" ng-show="vm.authentication.user._id == vm.portfolio.user._id">
+    <md-button class="md-raised md-accent" ng-click="vm.update(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
+      Update
+    </md-button>
+
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div>
+
   <!-- Page Heading -->
-  <h2 class="md-display-1">Edit Portfolio</h2>
+  <h2 class="md-display-1">Edit Portfolio Item</h2>
 
   <!-- Page Content -->
   <md-card class="md-padding no-margin-h">
@@ -13,50 +24,53 @@
         </md-input-container>
 
         <!-- Portfolio Subtitle -->
-        <md-input-container flex="100">
+        <md-input-container flex>
           <label>Subtitle</label>
           <input name="subtitle" type="text" ng-model="vm.portfolio.subtitle" id="subtitle" required>
         </md-input-container>
 
         <!-- Portfolio Date -->
-        <md-input-container flex="100">
+        <md-input-container flex>
           <label>Date</label>
           <input name="date" type="text" ng-model="vm.portfolio.date" id="date" required>
         </md-input-container>
 
         <!-- Portfolio Content -->
-        <md-input-container flex="100" class="input-content">
-          <label>Content</label>
-          <textarea ng-model="vm.portfolio.content" id="content"></textarea>
-        </md-input-container>
-
-        <!-- Portfolio Content -->
-        <md-input-container flex="100">
+        <md-input-container flex>
           <label>Youtube Link</label>
           <textarea ng-model="vm.portfolio.youtubeLink" id="youtube-link"></textarea>
         </md-input-container>
 
-        <!-- Portfolio Tags -->
-        <md-chips
-        ng-model="vm.portfolio.tags"
-        readonly="false"
-        placeholder="Enter a tag"
-        delete-button-label="Remove Tag"
-        delete-hint="Press delete to remove tag"
-        secondary-placeholder="+Tag"></md-chips>
-      </fieldset>
+        <!-- Portfolio Content -->
+        <md-input-container flex="100"  class="padding-b">
+          <label>Content</label>
+          <textarea ng-wig="vm.portfolio.content" source-mode-allowed></textarea>
+        </md-input-container>
+        <!-- Portfolio Content -->
+        <!-- <md-input-container flex="100" class="input-content">
+          <label>Content</label>
+          <textarea ng-model="vm.portfolio.content" id="content"></textarea>
+        </md-input-container> -->
 
+        <!-- Portfolio Roles -->
+        <label>Roles</label>
+        <md-chips class="padding-b" ng-model="vm.portfolio.roles" readonly="false" placeholder="Enter a role" delete-button-label="Remove Role" delete-hint="Press delete to remove role" secondary-placeholder="+Role"></md-chips>
+
+        <!-- Portfolio Tags -->
+        <label>Tags</label>
+        <md-chips ng-model="vm.portfolio.tags" readonly="false" placeholder="Enter a tag" delete-button-label="Remove Tag" delete-hint="Press delete to remove tag" secondary-placeholder="+Tag"></md-chips>
+      </fieldset>
 
     </form>
   </md-card>
-  <div layout="row"  layout-align="start center">
+  <!-- <div layout="row" layout-align="start center">
 
-  <md-button class="md-raised md-accent" ng-click="vm.update(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
-    Update
-  </md-button>
+    <md-button class="md-raised md-accent" ng-click="vm.update(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
+      Update
+    </md-button>
 
-  <md-button class="md-raised" ng-click="vm.cancel();">
-    Cancel
-  </md-button>
-  </div>
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div> -->
 </section>

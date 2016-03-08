@@ -46,6 +46,11 @@ var PortfolioSchema = new Schema({
     default: [],
     trim: true
   },
+  roles: {
+    type: Array,
+    default: [],
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

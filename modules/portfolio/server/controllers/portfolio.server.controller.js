@@ -44,6 +44,7 @@ exports.update = function (req, res) {
   portfolio.subtitle = req.body.subtitle;
   portfolio.date = req.body.date;
   portfolio.tags = req.body.tags;
+  portfolio.roles = req.body.roles;
   portfolio.youtubeLink = req.body.youtubeLink;
   portfolio.save(function (err) {
     if (err) {

@@ -1,5 +1,8 @@
 <section class="container">
 
+  <!-- Portfolio Heading / Date -->
+  <h2 class="md-display-1" ng-bind="vm.portfolio.title"></h2>
+
   <!-- Content Edit Buttons -->
   <div class="content-buttons" ng-show="vm.authentication.user._id == vm.portfolio.user._id">
     <md-button class="md-accent md-raised" ng-if="vm.authentication.user" ng-click="vm.edit(vm.portfolio);">
@@ -10,8 +13,6 @@
     </md-button>
   </div>
 
-  <!-- Portfolio Heading / Date -->
-  <h2 class="md-display-1" ng-bind="vm.portfolio.title"></h2>
   <h2 class="md-title" ng-bind="vm.portfolio.subtitle"></h2>
   <!-- <small> -->
   <!-- <em class="md-body-1"> -->
@@ -22,18 +23,27 @@
 
   <!-- Portfolio Content -->
   <div layout="column">
-    <md-card class="md-padding no-margin-h" layout="row" layout-wrap>
-
-      <div flex="33" class="md-body-1 padding-r" ng-bind-html="vm.portfolio.content"></div>
-      <div flex="66">
+    <md-card class="md-padding no-margin-h" layout="row" layout-wrap layout-align="center start">
+      <div flex="100" class="padding-b">
         <a class="md-whiteframe-z1" ob-lazytube href="{{vm.portfolio.youtubeLink}}">The Sandwich</a>
       </div>
+
+      <div flex="100" class="md-body-1" ng-bind-html="vm.portfolio.content"></div>
       <div flex="100">
+        <md-divider></md-divider>
+        <h4 class="md-title">Roles</h4>
+        <md-chips
+        ng-model="vm.portfolio.roles"
+        readonly="true"></md-chips>
+      </div>
+      <div flex="100">
+        <md-divider></md-divider>
         <h4 class="md-title">Tags</h4>
         <md-chips
          ng-model="vm.portfolio.tags"
          readonly="true"></md-chips>
       </div>
+
     </md-card>
 
   </div>

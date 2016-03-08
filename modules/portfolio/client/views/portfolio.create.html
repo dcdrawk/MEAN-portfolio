@@ -1,0 +1,24 @@
+<section class="container">
+  <h2 class="md-display-1">New Portfolio Item</h2>
+  <md-card class="md-padding no-margin-h">
+    <form name="portfolioForm" novalidate>
+      <fieldset layout="row" layout-wrap>
+        <md-input-container flex="100" class="input-title">
+          <label>Title</label>
+          <input name="title" type="text" ng-model="vm.title" id="title" required>
+        </md-input-container>
+
+        <md-input-container flex="100" class="input-content">
+          <label>Content</label>
+          <textarea ng-model="vm.content" id="content"></textarea>
+        </md-input-container>
+      </fieldset>
+    </form>
+  </md-card>
+  <div layout="row"  layout-align="start center">
+
+  <md-button class="md-raised md-accent" ng-click="vm.create(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
+    Save
+  </md-button>
+  </div>
+</section>

@@ -60,12 +60,7 @@
 
     </div>
     <md-tabs md-stretch-tabs>
-      <!-- <md-tab ui-sref="home">Home</md-tab>
-      <md-tab ui-sref="articles.list">PortFolio</md-tab>
-      <md-tab ui-sref="articles.list">Articles</md-tab>
-      <md-tab ui-sref="articles.list">Contact</md-tab> -->
-      <md-tab md-active="currentState === item.state" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ui-sref="{{item.state}}">{{item.title}}</md-tab>
-      <!-- <md-tab ui-sref="chat" ng-if="authentication.user">Chat</md-tab> -->
+      <md-tab md-active="setActiveTab(item.state, currentState)" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ui-sref="{{item.state}}">{{item.title}}</md-tab>
       <md-tab ui-sref="authentication.signup" ng-if="!authentication.user">Sign Up</md-tab>
       <md-tab ui-sref="authentication.signin" ng-if="!authentication.user">Sign In</md-tab>
     </md-tabs>

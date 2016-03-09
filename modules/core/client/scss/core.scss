@@ -5,6 +5,9 @@
 @import 'styles/layout';
 @import 'styles/page-header';
 @import 'styles/backgrounds';
+@import 'styles/scrollbar';
+@import 'animation/view';
+@include scrollbars(10px, #FFC107, #607D8B);
 // .navbar-header {
 //     color: red;
 // }

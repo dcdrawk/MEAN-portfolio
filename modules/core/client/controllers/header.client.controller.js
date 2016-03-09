@@ -5,8 +5,33 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
 
     //When the state changes, update the selected tab
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-      $scope.currentState = toState.name;
+      // if(toState.name.indexOf('.') > 0) {
+      //   var nestedIndex = toState.name.indexOf('.');
+      //   var parentState = toState.name.slice(0, nestedIndex);
+      //   $scope.currentState = parentState + '.list';
+      // } else {
+      console.log(toState);
+      $scope.currentState = angular.copy(toState.name);
+      // }
     });
+
+    // $scope.setActiveTab = function(itemState, currentState) {
+    //   if(!itemState || !currentState) {
+    //     return;
+    //   }
+    //   var itemIndex = itemState.indexOf('.');
+    //   var parentItemState =  itemState.slice(0, itemIndex);
+    //
+    //   var currentIndex = currentState.indexOf('.');
+    //   var parentCurrentState =  currentState.slice(0, currentIndex);
+    //
+    //   if(itemState && currentState && parentItemState === parentCurrentState) {
+    //     // return true;
+    //   } else {
+    //     // return false;
+    //   }
+    // };
+
 
     // $timeout(function() {
     //   $scope.currentState = $state.$current.name;

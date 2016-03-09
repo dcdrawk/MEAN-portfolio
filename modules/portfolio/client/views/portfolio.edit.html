@@ -35,6 +35,18 @@
           <input name="date" type="text" ng-model="vm.portfolio.date" id="date" required>
         </md-input-container>
 
+        <!-- List Position -->
+        <md-input-container flex>
+          <label>List Position</label>
+          <input name="date" type="number" ng-model="vm.portfolio.position" id="position">
+        </md-input-container>
+
+        <!-- Card Image Source -->
+        <md-input-container flex>
+          <label>Card Image Source</label>
+          <textarea ng-model="vm.portfolio.cardImgSrc" id="card-img-src"></textarea>
+        </md-input-container>
+
         <!-- Portfolio Content -->
         <md-input-container flex>
           <label>Youtube Link</label>
@@ -42,15 +54,13 @@
         </md-input-container>
 
         <!-- Portfolio Content -->
-        <md-input-container flex="100"  class="padding-b">
-          <label>Content</label>
+        <!-- <md-input-container flex="100"  class="padding-b"> -->
+        <div flex="100" class="padding-b">
+
+          <!-- <label>Content</label> -->
           <textarea ng-wig="vm.portfolio.content" source-mode-allowed></textarea>
-        </md-input-container>
-        <!-- Portfolio Content -->
-        <!-- <md-input-container flex="100" class="input-content">
-          <label>Content</label>
-          <textarea ng-model="vm.portfolio.content" id="content"></textarea>
-        </md-input-container> -->
+        </div>
+        <!-- </md-input-container> -->
 
         <!-- Portfolio Roles -->
         <label>Roles</label>

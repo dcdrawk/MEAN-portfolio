@@ -2,17 +2,6 @@
   <h2 class="md-display-1">New Portfolio Item</h2>
   <md-card class="md-padding no-margin-h">
     <form name="portfolioForm" novalidate>
-      <!-- <fieldset layout="row" layout-wrap>
-        <md-input-container flex="100" class="input-title">
-          <label>Title</label>
-          <input name="title" type="text" ng-model="vm.portfolio.title" id="title" required>
-        </md-input-container>
-
-        <md-input-container flex="100" class="input-content">
-          <label>Content</label>
-          <textarea ng-model="vm.portfolio.content" id="content"></textarea>
-        </md-input-container>
-      </fieldset> -->
       <fieldset layout="row" layout-wrap>
         <!-- Portfolio Title -->
         <md-input-container flex="100" class="input-title">
@@ -32,17 +21,31 @@
           <input name="date" type="text" ng-model="vm.portfolio.date" id="date" required>
         </md-input-container>
 
-        <!-- Portfolio Content -->
-        <md-input-container flex="100" class="input-content">
-          <label>Content</label>
-          <textarea ng-model="vm.portfolio.content" id="content"></textarea>
+        <!-- List Position -->
+        <md-input-container flex>
+          <label>List Position</label>
+          <input name="date" type="number" ng-model="vm.portfolio.position" id="order">
         </md-input-container>
 
-        <!-- Portfolio Content -->
+        <!-- Card Image Source -->
+        <md-input-container flex>
+          <label>Card Image Source</label>
+          <textarea ng-model="vm.portfolio.cardImgSrc" id="card-img-src"></textarea>
+        </md-input-container>
+
+        <!-- Portfolio Youtube Link -->
         <md-input-container flex="100">
           <label>Youtube Link</label>
           <textarea ng-model="vm.portfolio.youtubeLink" id="youtube-link"></textarea>
         </md-input-container>
+
+        <!-- Portfolio Content -->
+        <!-- <md-input-container flex="100"  class="padding-b"> -->
+        <div flex="100" class="padding-b">
+          <textarea ng-wig="vm.portfolio.content" source-mode-allowed></textarea>
+
+        </div>
+        <!-- </md-input-container> -->
 
         <!-- Portfolio Roles -->
         <label>Roles</label>

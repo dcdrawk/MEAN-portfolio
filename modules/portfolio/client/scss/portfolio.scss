@@ -3,3 +3,22 @@
     height: 100%;
   }
 }
+
+.portfolio-card {
+  height:200px;
+  padding: 0;
+  cursor: pointer;
+  transition: background-size .5s cubic-bezier(0.215,.61,.355,1);
+  &:hover {
+    background-size: 107%!important;
+  }
+}
+
+.portfolio-card-text {
+  color: #fff;
+  background-color: rgba(0,0,0,.24);
+}
+
+.sandwich {
+  // background-image: url('http://thewebdev.ca/images/projects/thumbs/sandwich.jpg');
+}

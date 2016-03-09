@@ -12,7 +12,7 @@
     var vm = this;
     vm.authentication = Authentication;
     vm.portfolio = portfolio;
-
+    vm.portfolio.position = parseInt(vm.portfolio.position);
     // Update existing Article
     vm.update = function(isValid) {
       // console.log('dwjiaodjiaod');

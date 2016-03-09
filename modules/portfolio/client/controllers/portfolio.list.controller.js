@@ -8,10 +8,15 @@
   // PortfolioController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function PortfolioListController($location, Authentication, portfolioList, Portfolio) {
+  function PortfolioListController($location, Authentication, portfolioList, Portfolio, $timeout) {
     var vm = this;
     vm.authentication = Authentication;
     vm.portfolioList = portfolioList;
+
+    $timeout(function() {
+      vm.doneTransition = true;
+    }, 500)
+
     vm.create = function (isValid, item) {
       vm.error = null;
 
@@ -38,6 +43,6 @@
         vm.error = errorResponse.data.message;
       });
     };
-    
+
   }
 })();

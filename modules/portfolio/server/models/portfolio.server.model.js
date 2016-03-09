@@ -31,6 +31,16 @@ var PortfolioSchema = new Schema({
     default: '',
     trime: true
   },
+  position: {
+    type: String,
+    default: '',
+    trime: true
+  },
+  cardImgSrc: {
+    type: String,
+    default: '',
+    trime: true
+  },
   content: {
     type: String,
     default: '',

@@ -1,29 +1,26 @@
 <!-- <div class="page-background portfolio-background"></div> -->
 <div class="heading">
-  <h2 class="md-display-1 container">Portfolio</h2>
+  <h2 class="md-display-1 container">Projects</h2>
 </div>
 <section class="container">
   <!-- {{vm.portfolioList}} -->
   <md-button class="md-accent md-raised md-fab add-button" ng-if="vm.authentication.user" ui-sref="portfolio.create">
     <md-icon class="material_icons">add</md-icon>
   </md-button>
-  <div layout="row" layout-fill layout-wrap class="clear-both">
+  <div layout="row" layout-fill layout-wrap class="clear-both" ng-if="vm.doneTransition">
     <div flex="100" ng-if="vm.portfolioList.$resolved && !vm.portfolioList.length">
       <md-card ui-sref="vm.portfolio.create" class="md-padding">
         No Portfolio Items yet, why don't you create one?
       </md-card>
     </div>
-    <div flex="100" ng-repeat="portfolio in vm.portfolioList">
-      <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding">
-        <h4 ng-bind="portfolio.title"></h4>
-        <small>
-          Posted on
-          <span ng-bind="portfolio.created | date:'mediumDate'"></span>
-          by
-          <span ng-bind="portfolio.user.displayName"></span>
-        </small>
-        <md-divider class="margin-v"></md-divider>
-        <p class="portfolio-content" ng-bind="portfolio.content"></p>
+    <div class="animate-repeat" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.portfolioList | orderBy: 'position'" animate-on-load>
+      <!-- <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
+      <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap
+      style="background: url({{portfolio.cardImgSrc}}); background-size: 100%; background-position: center;">
+        <div class="portfolio-card-text md-padding" flex="100">
+          <h4  class="md-title" ng-bind="portfolio.title"></h4>
+          <h5 class="md-subhead" ng-bind="portfolio.subtitle"></h5>
+        </div>
       </md-card>
     </div>
   </div>

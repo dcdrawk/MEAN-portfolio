@@ -15,6 +15,19 @@
           <input name="subtitle" type="text" ng-model="vm.portfolio.subtitle" id="subtitle" required>
         </md-input-container>
 
+        <!-- Portfolio Type -->
+        <md-input-container flex="100">
+          <label>Type</label>
+          <md-select ng-model="vm.portfolio.type">
+            <md-option value="project">
+              Project
+            </md-option>
+            <md-option value="website">
+              Website
+            </md-option>
+          </md-select>
+        </md-input-container>
+
         <!-- Portfolio Date -->
         <md-input-container flex="100">
           <label>Date</label>
@@ -33,17 +46,33 @@
           <textarea ng-model="vm.portfolio.cardImgSrc" id="card-img-src"></textarea>
         </md-input-container>
 
-        <!-- Portfolio Youtube Link -->
-        <md-input-container flex="100">
+        <!-- Main Image Source -->
+        <md-input-container flex>
+          <label>Main Image Source</label>
+          <textarea ng-model="vm.portfolio.picture" id="main-img-src"></textarea>
+        </md-input-container>
+
+        <!-- Youtube Link -->
+        <md-input-container flex>
           <label>Youtube Link</label>
           <textarea ng-model="vm.portfolio.youtubeLink" id="youtube-link"></textarea>
         </md-input-container>
 
+        <!-- Github Link -->
+        <md-input-container flex>
+          <label>Github Link</label>
+          <textarea ng-model="vm.portfolio.githubLink" id="github-link"></textarea>
+        </md-input-container>
+
+        <!-- App Link -->
+        <md-input-container flex>
+          <label>App Link</label>
+          <textarea ng-model="vm.portfolio.appLink" id="app-link"></textarea>
+        </md-input-container>
+
         <!-- Portfolio Content -->
-        <!-- <md-input-container flex="100"  class="padding-b"> -->
         <div flex="100" class="padding-b">
           <textarea ng-wig="vm.portfolio.content" source-mode-allowed></textarea>
-
         </div>
         <!-- </md-input-container> -->
 

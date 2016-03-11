@@ -12,10 +12,11 @@
     var vm = this;
     vm.authentication = Authentication;
     vm.portfolioList = portfolioList;
-
-    $timeout(function() {
-      vm.doneTransition = true;
-    }, 350);
+    vm.projectList = portfolioList.projects;
+    vm.websiteList = portfolioList.websites;
+    // $timeout(function() {
+      vm.showWebsites = true;
+    // }, 1000);
 
     vm.create = function (isValid, item) {
       vm.error = null;

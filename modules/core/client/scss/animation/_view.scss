@@ -9,17 +9,17 @@ $easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
 
 $timing   : 1.5s;
 
-// [ui-view].ng-enter,
-// [ui-view].ng-leave {
+[ui-view].ng-enter,
+[ui-view].ng-leave {
 //   position          : absolute;
-//   overflow          : hidden;
+  overflow          : hidden;
 //   left              : 0;
 //   right             : 0;
 //   -webkit-transition: all 0.5s ease-in-out;
 //   -moz-transition   : all 0.5s ease-in-out;
 //   -o-transition     : all 0.5s ease-in-out;
 //   transition        : all 0.5s ease-in-out;
-// }
+}
 // [ui-view].ng-enter {
 //   opacity: 0;
 //   // -webkit-transform:scale3d(0.5, 0.5, 0.5);
@@ -44,17 +44,17 @@ $timing   : 1.5s;
 //   // -moz-transform:translate3d(100px, 0, 0);
 //   // transform:translate3d(100px, 0, 0);
 // }
-// ui-view.ng-enter,
-// ui-view.ng-leave {
+ui-view.ng-enter,
+ui-view.ng-leave {
 //   position          : absolute;
-//   overflow          : hidden;
+  overflow          : hidden;
 //   left              : 0;
 //   right             : 0;
 //   -webkit-transition: all 0.35s ease-in-out;
 //   -moz-transition   : all 0.35s ease-in-out;
 //   -o-transition     : all 0.35s ease-in-out;
 //   transition        : all 0.35s ease-in-out;
-// }
+}
 // ui-view.ng-enter {
 //   opacity: 0;
 // }
@@ -172,4 +172,8 @@ $fade-timing: 2s;
 .animate-fade-in.ng-move.ng-move-active,
 .animate-fade-in.ng-enter.ng-enter-active {
   opacity            : 1;
+}
+
+.delay-2s {
+  transition-delay: 4s!important;
 }

@@ -27,11 +27,13 @@
       </div>
       <div layout="row" layout-wrap>
 
-        <div flex="33" class="padding-r padding-b" ng-if="vm.portfolio.picture">
+        <div ng-if="vm.portfolio.type == 'project' && vm.portfolio.picture" flex="33" class="padding-r padding-b">
+          <img ng-cloak src="{{vm.portfolio.picture}}"/>
+        </div>
+        <div ng-if="vm.portfolio.type == 'website' && vm.portfolio.picture" flex="50" class="padding-r padding-b">
           <img ng-cloak src="{{vm.portfolio.picture}}"/>
         </div>
         <div flex>
-
           <div class="md-body-1" ng-bind-html="vm.portfolio.content"></div>
           <md-button ng-if="vm.portfolio.githubLink" href="{{vm.portfolio.githubLink}}" target="_blank" class="md-raised">View on Github</md-button>
           <md-button ng-if="vm.portfolio.appLink" href="{{vm.portfolio.appLink}}" target="_blank"  class="md-primary md-raised">Launch App</md-button>

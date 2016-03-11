@@ -79,6 +79,9 @@ header {
 .padding-l {
   padding-left: 16px; }
 
+.padding-t {
+  padding-top: 16px; }
+
 .padding-b {
   padding-bottom: 16px; }
 
@@ -109,6 +112,14 @@ header {
   z-index: -1;
   -webkit-filter: grayscale(1) brightness(1);
   background-size: cover; }
+
+[ui-view].ng-enter,
+[ui-view].ng-leave {
+  overflow: hidden; }
+
+ui-view.ng-enter,
+ui-view.ng-leave {
+  overflow: hidden; }
 
 .animate-repeat {
   opacity: 1;
@@ -205,6 +216,9 @@ header {
 .animate-fade-in.ng-move.ng-move-active,
 .animate-fade-in.ng-enter.ng-enter-active {
   opacity: 1; }
+
+.delay-2s {
+  transition-delay: 4s !important; }
 
 ddn-sticky-wrapper,
 ddn-sticky {

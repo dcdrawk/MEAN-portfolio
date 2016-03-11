@@ -43,11 +43,16 @@ exports.update = function (req, res) {
   portfolio.content = req.body.content;
   portfolio.subtitle = req.body.subtitle;
   portfolio.date = req.body.date;
+  portfolio.type = req.body.type;
   portfolio.position = req.body.position;
   portfolio.tags = req.body.tags;
   portfolio.roles = req.body.roles;
   portfolio.youtubeLink = req.body.youtubeLink;
   portfolio.cardImgSrc = req.body.cardImgSrc;
+  portfolio.picture = req.body.picture;
+  portfolio.githubLink = req.body.githubLink;
+  portfolio.appLink = req.body.appLink;
+
   portfolio.save(function (err) {
     if (err) {
       return res.status(400).send({
@@ -87,6 +92,30 @@ exports.list = function (req, res) {
       });
     } else {
       res.json(items);
+    }
+  });
+};
+
+exports.listByType = function (req, res) {
+  Portfolio.find().sort('-created').populate('user', 'displayName').exec(function (err, items) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      var response = {};
+      // response.items = items;
+      response.websites = [];
+      response.projects = [];
+      for(var i in items) {
+        var item = items[i];
+        if(item.type === 'website') {
+          response.websites.push(item);
+        } else if(item.type === 'project'){
+          response.projects.push(item);
+        }
+      }
+      res.json(response);
     }
   });
 };

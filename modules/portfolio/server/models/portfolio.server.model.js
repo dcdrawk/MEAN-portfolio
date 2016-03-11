@@ -26,6 +26,11 @@ var PortfolioSchema = new Schema({
     trim: true,
     required: 'Subtitle cannot be blank'
   },
+  type: {
+    type: String,
+    default: '',
+    trim: true,
+  },
   date: {
     type: String,
     default: '',
@@ -41,12 +46,27 @@ var PortfolioSchema = new Schema({
     default: '',
     trime: true
   },
+  picture: {
+    type: String,
+    default: '',
+    trime: true
+  },
   content: {
     type: String,
     default: '',
     trim: true
   },
   youtubeLink: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  githubLink: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  appLink: {
     type: String,
     default: '',
     trim: true

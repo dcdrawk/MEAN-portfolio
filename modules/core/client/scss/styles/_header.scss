@@ -13,6 +13,9 @@ header {
     md-tabs .md-tab {
       color: rgba(255,255,255,.5);
       font-weight: 400;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
     }
     .md-tab.md-active {
       color: $white;

@@ -40,6 +40,13 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }]
   }]);
+  acl.allow([{
+    roles: ['admin', 'user', 'guest'],
+    allows: [{
+      resources: '/api/portfolio/typelist',
+      permissions: 'get'
+    }]
+  }]);
 };
 
 /**

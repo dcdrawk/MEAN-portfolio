@@ -12,6 +12,9 @@ module.exports = function (app) {
     .get(portfolio.list)
     .post(portfolio.create);
 
+  // portfolios collection routes
+  app.route('/api/portfolio/typelist').all(portfolioPolicy.isAllowed)
+      .get(portfolio.listByType);
   // Single portfolio routes
   app.route('/api/portfolio/:portfolioId').all(portfolioPolicy.isAllowed)
     .get(portfolio.read)
@@ -20,4 +23,6 @@ module.exports = function (app) {
 
   // Finish by binding the portfolio middleware
   app.param('portfolioId', portfolio.portfolioByID);
+
+
 };

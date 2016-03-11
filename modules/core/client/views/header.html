@@ -1,9 +1,17 @@
-<section id="page-header" class="container">
-  <h1 class="page-title md-display-1">Devin Cook</h1>
-  <span class="page-title md-subhead">Web Developer / Interaction Designer</span>
+<section id="page-header" class="container" layout="row">
+  <div class="devin-pic">
+    <img  alt="Devin Cook" src="/modules/core/client/img/devin.jpg" />
+  </div>
+  <div class="header-text">
+
+    <h1 class="page-title md-display-1">Devin Cook</h1>
+    <span class="page-title md-subhead">Web Developer / Interaction Designer</span>
+  </div>
 </section>
+
+<!-- <ddn-sticky-wrapper> -->
 <section id="navigation-bar" ng-controller="HeaderController">
-   <!-- {{currentState}} -->
+  <!-- {{currentState}} -->
   <div class="container">
     <div class="user-menu" ng-show="authentication.user">
       <!-- <span class="profile-pic">
@@ -14,10 +22,10 @@
       </span> -->
 
       <md-menu md-position-mode="target-right target" md-offset="-216 64">
-        <md-button class="no-margin" md-menu-origin  aria-label="open user menu" ng-click="openMenu($mdOpenMenu, $event)">
+        <md-button class="no-margin" md-menu-origin aria-label="open user menu" ng-click="openMenu($mdOpenMenu, $event)">
           <!-- <md-icon class="material-icons">more_vert</md-icon> -->
           <span class="profile-pic">
-            <img ng-src="{{authentication.user.profileImageURL}}" />
+            <img ng-src="{{authentication.user.profileImageURL}}"/>
           </span>
           <span class="user-menu-text">
             <span ng-bind="authentication.user.username"></span>
@@ -66,3 +74,6 @@
     </md-tabs>
   </div>
 </section>
+
+<!-- <div>Header</div> -->
+<!-- </ddn-sticky-wrapper> -->

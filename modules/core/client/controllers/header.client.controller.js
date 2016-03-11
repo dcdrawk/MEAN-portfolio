@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$timeout', '$rootScope',
-  function($scope, $state, Authentication, Menus, $timeout, $rootScope) {
+angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus', '$timeout', '$rootScope', '$document',
+  function($scope, $state, Authentication, Menus, $timeout, $rootScope, $document) {
 
     //When the state changes, update the selected tab
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
@@ -48,7 +48,7 @@ angular.module('core').controller('HeaderController', ['$scope', '$state', 'Auth
     //   console.log($scope.currentState + '500');
     // }, 500);
     //
-
+    var navBar = document.getElementById('navigation-bar');
     //Open the user menu
     $scope.openMenu = function($mdOpenMenu, ev) {
       $mdOpenMenu(ev);

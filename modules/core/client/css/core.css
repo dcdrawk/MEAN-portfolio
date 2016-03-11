@@ -43,6 +43,11 @@ header {
 .user-menu-dropdown a:hover, .user-menu-dropdown a:focus {
   color: rgba(0, 0, 0, 0.87); }
 
+.devin-pic img {
+  margin: 20px 24px 0 0;
+  width: 96px;
+  border-radius: 50%; }
+
 .add-button, .options-speed-dial {
   float: right;
   left: -16px;
@@ -93,8 +98,6 @@ header {
 
 .heading {
   display: flex; }
-  .heading h2 {
-    font-weight: 500; }
 
 .page-background {
   height: 100vh;
@@ -197,6 +200,25 @@ ui-view.ng-leave-active {
      must be set to 0 to avoid an accidental CSS inheritance */
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+ddn-sticky-wrapper,
+ddn-sticky {
+  display: block; }
+
+ddn-sticky-wrapper {
+  opacity: .9; }
+
+ddn-sticky-wrapper > ddn-sticky {
+  z-index: 1; }
+
+ddn-sticky-wrapper > ddn-sticky.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0; }
+
+ddn-sticky-wrapper > ddn-sticky.fixed.absolute {
+  position: absolute; }
 
 ::-webkit-scrollbar {
   width: 10px;

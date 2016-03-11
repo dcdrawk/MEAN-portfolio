@@ -15,7 +15,7 @@
 
     $timeout(function() {
       vm.doneTransition = true;
-    }, 500)
+    }, 350);
 
     vm.create = function (isValid, item) {
       vm.error = null;

@@ -1,0 +1,115 @@
+// body {
+//   overflow-x: hidden;
+// }
+
+$easeOutExpo   : cubic-bezier(0.190, 1.000, 0.220, 1.000);
+$timing   : 2.5s;
+
+[ui-view].ng-enter,
+[ui-view].ng-leave {
+  position          : absolute;
+  overflow          : hidden;
+  left              : 0;
+  right             : 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition   : all 0.5s ease-in-out;
+  -o-transition     : all 0.5s ease-in-out;
+  transition        : all 0.5s ease-in-out;
+}
+[ui-view].ng-enter {
+  opacity: 0;
+  // -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  // -moz-transform:scale3d(0.5, 0.5, 0.5);
+  // transform:scale3d(0.5, 0.5, 0.5);
+}
+[ui-view].ng-enter-active {
+  opacity: 1;
+  // -webkit-transform:scale3d(1, 1, 1);
+  // -moz-transform:scale3d(1, 1, 1);
+  // transform:scale3d(1, 1, 1);
+}
+[ui-view].ng-leave {
+  opacity: 1;
+  // -webkit-transform:translate3d(0, 0, 0);
+  // -moz-transform:translate3d(0, 0, 0);
+  // transform:translate3d(0, 0, 0);
+}
+[ui-view].ng-leave-active {
+  opacity: 0;
+  // -webkit-transform:translate3d(100px, 0, 0);
+  // -moz-transform:translate3d(100px, 0, 0);
+  // transform:translate3d(100px, 0, 0);
+}
+ui-view.ng-enter,
+ui-view.ng-leave {
+  position          : absolute;
+  overflow          : hidden;
+  left              : 0;
+  right             : 0;
+  -webkit-transition: all 0.35s ease-in-out;
+  -moz-transition   : all 0.35s ease-in-out;
+  -o-transition     : all 0.35s ease-in-out;
+  transition        : all 0.35s ease-in-out;
+}
+ui-view.ng-enter {
+  opacity: 0;
+}
+ui-view.ng-enter-active {
+  opacity: 1;
+}
+ui-view.ng-leave {
+  opacity: 1;
+  z-index: -1;
+}
+ui-view.ng-leave-active {
+  opacity: 0;
+}
+
+.animate-repeat {
+  opacity            : 1;
+  -webkit-transition : $timing $easeOutExpo all;
+  transition         : $timing $easeOutExpo all;
+  transition-delay   : 0.5s;
+}
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition : $timing $easeOutExpo all;
+  transition         : $timing $easeOutExpo all;
+  // -webkit-transition:all $easeOutExpo .5s;
+  // transition:all $easeOutExpo .5s;
+}
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity: 0;
+}
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+/**
+ * Stagger Leave (hide) animation
+ */
+.animate-repeat.ng-leave-stagger {
+  /* this will have a 100ms delay between each successive leave animation */
+  -webkit-transition-delay   : 0.1s;
+  transition-delay           : 0.1s;
+  /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+  -webkit-transition-duration: 0s;
+  transition-duration        : 0s;
+}
+/**
+ * Stagger ENTER ANIMATION
+ */
+.animate-repeat.ng-enter-stagger {
+  /* this will have a 100ms delay between each successive enter animation */
+  -webkit-transition-delay   : 0.1s;
+  transition-delay           : 0.1s;
+  /* in case the stagger doesn't work then these two values
+     must be set to 0 to avoid an accidental CSS inheritance */
+  -webkit-transition-duration: 0s;
+  transition-duration        : 0s;
+}

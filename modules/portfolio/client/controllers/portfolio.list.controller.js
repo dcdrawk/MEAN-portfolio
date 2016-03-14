@@ -15,10 +15,10 @@
     vm.projectList = portfolioList.projects;
     vm.websiteList = portfolioList.websites;
     // $timeout(function() {
-      vm.showWebsites = true;
+    vm.showWebsites = true;
     // }, 1000);
 
-    vm.create = function (isValid, item) {
+    vm.create = function(isValid, item) {
       vm.error = null;
 
       // if (!isValid) {
@@ -34,13 +34,13 @@
       });
 
       // Redirect after save
-      portfolio.$save(function (response) {
+      portfolio.$save(function(response) {
         $location.path('portfolio/' + response._id);
 
         // Clear form fields
         vm.title = '';
         vm.content = '';
-      }, function (errorResponse) {
+      }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });
     };

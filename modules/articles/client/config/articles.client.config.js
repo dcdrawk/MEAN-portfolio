@@ -11,10 +11,17 @@ angular.module('articles').run(['Menus',
       roles: ['*']
     });
 
-    // Add the articles menu item
+    // Add the portfolio menu item
     Menus.addMenuItem('topbar', {
       title: 'Portfolio',
       state: 'portfolio.list',
+      roles: ['*']
+    });
+
+    // Add the portfolio menu item
+    Menus.addMenuItem('topbar', {
+      title: 'Experience',
+      state: 'experience.list',
       roles: ['*']
     });
 

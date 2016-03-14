@@ -1,5 +1,6 @@
 // @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
 @import 'styles/variables';
+@import 'styles/typography';
 @import 'styles/header';
 @import 'styles/buttons';
 @import 'styles/layout';
@@ -7,6 +8,7 @@
 @import 'styles/backgrounds';
 @import 'styles/scrollbar';
 @import 'animation/view';
+@import 'animation/scale';
 @import 'styles/sticky-header';
 @include scrollbars(10px, #FFC107, #607D8B);
 // .navbar-header {

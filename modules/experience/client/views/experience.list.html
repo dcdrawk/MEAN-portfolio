@@ -13,14 +13,15 @@
         No Experience Items yet, why don't you create one?
       </md-card>
     </div>
-    <div class="animate-repeat" layout="column" ng-repeat="experience in vm.experienceList | orderBy: 'position'" animate-on-load>
+    <div class="animate-repeat" layout="column" ng-repeat="experience in vm.experienceList | orderBy: 'order'" animate-on-load>
       <!-- <md-card ui-sref="experience.view({experienceId: experience._id})" class="md-padding experience-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
-      <md-card class="md-padding" flex="100">
+      <md-card class="md-padding no-margin-h" flex="100">
         <div class="experience-card-text md-padding">
-          <h4 class="md-title">{{experience.position}}<span ng-show="vm.authentication.user"><md-button ui-sref="experience.edit({ 'experienceId': experience._id })">Edit</md-button></span></h4>
+          <h4 class="md-title">{{experience.position}}</h4>
           <h5 class="md-subhead">{{experience.company}} {{experience.date}}</h5>
           <p>{{experience.role}}</p>
           <p>{{experience.result}}</p>
+          <md-button ng-show="vm.authentication.user" class="no-margin" ui-sref="experience.edit({ 'experienceId': experience._id })">Edit</md-button>
         </div>
       </md-card>
     </div>

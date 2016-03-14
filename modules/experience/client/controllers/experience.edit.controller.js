@@ -26,7 +26,7 @@
       var experience = vm.experience;
 
       experience.$update(function() {
-        $location.path('experience/' + experience._id);
+        $state.go('experience.list');
       }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });

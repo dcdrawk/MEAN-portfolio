@@ -44,7 +44,7 @@ exports.update = function (req, res) {
   experience.company = req.body.company;
   experience.role = req.body.role;
   experience.result = req.body.result;
-
+  experience.order = req.body.order;
   experience.save(function (err) {
     if (err) {
       return res.status(400).send({

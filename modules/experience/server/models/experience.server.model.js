@@ -44,6 +44,11 @@ var ExperienceSchema = new Schema({
     trim: true,
     required: 'Result cannot be blank'
   },
+  order: {
+    type: Number,
+    default: 0,
+    trim: true
+  },
   user: {
     type: Schema.ObjectId,
     ref: 'User'

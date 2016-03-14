@@ -62,6 +62,11 @@ header {
   float: right;
   margin-top: 16px; }
 
+.edit-button {
+  float: right;
+  margin-top: 0px;
+  margin-right: 0px; }
+
 .no-margin {
   margin: 0 0 0 0; }
 

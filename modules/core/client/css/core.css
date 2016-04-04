@@ -5,12 +5,13 @@ p {
   line-height: 1.6em;
   margin: 0.8em 0 1.6em; }
 
+.center-text {
+  text-align: center; }
+
 header {
   background-color: #009688;
   color: #fff;
   height: 176px; }
-  header #page-header {
-    height: 128px; }
   header h1 {
     margin-top: 32px;
     color: #fff; }
@@ -26,8 +27,6 @@ header {
     color: #fff;
     background: #FFC107;
     height: 4px; }
-  header #navigation-bar {
-    background-color: #00897B; }
 
 .user-menu {
   float: right;
@@ -80,6 +79,10 @@ header {
 .no-margin-h {
   margin-left: 0;
   margin-right: 0; }
+
+.no-margin-v {
+  margin-top: 0;
+  margin-bottom: 0; }
 
 .margin-v {
   margin-top: 16px;

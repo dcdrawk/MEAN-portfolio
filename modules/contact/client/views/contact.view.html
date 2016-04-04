@@ -1,0 +1,78 @@
+<!-- <div class="page-background experience-background"></div> -->
+<div class="heading animate-fade-in" animate-on-load>
+  <h2 class="md-display-1 container">Contact</h2>
+</div>
+
+<section ng-controller="HomeController" class="container margin-top animate-repeat"  animate-on-load>
+
+  <div ng-if="!vm.contact">
+    <md-card class="no-margin-h" layout="row" layout-align="center center" layout-wrap>
+      <md-card-content>
+        <p class="center-text" flex="100">
+          No Contact Info yet
+        </p>
+        <md-button ui-sref="contact-edit">Add Contact Info</md-button>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div ng-if="vm.contact">
+    <md-card class="no-margin-h">
+      <md-card-content layout="row">
+        <div flex="33">
+
+        <p class="md-title no-margin-v">
+          Email
+        </p>
+        <p>
+          {{vm.contact.email}}
+        </p>
+
+        <!-- <md-divider class="margin-v"></md-divider> -->
+
+        <p class="md-title no-margin-v">
+          Phone
+        </p>
+        <p>
+          {{vm.contact.phone}}
+        </p>
+
+        <!-- <md-divider class="margin-v"></md-divider> -->
+
+        <p class="md-title no-margin-v">
+          Home Town
+        </p>
+        <p>
+          {{vm.contact.address}}
+        </p>
+
+        <md-button ng-show="vm.authentication.user" class="no-margin" ui-sref="contact-edit({ 'contactId': vm.contact._id })">Edit</md-button>
+      </div>
+      <div flex="66" layout="row" layout-wrap>
+        <p class="md-title no-margin-v" flex="100">
+          Send me a message
+        </p>
+
+        <md-input-container flex="100">
+          <label>Subject</label>
+          <input name="subject" type="text" ng-model="vm.message.subject" id="subject">
+        </md-input-container>
+        <md-input-container flex="100">
+          <label>Message</label>
+          <textarea name="subject" type="text" ng-model="vm.message.body" id="subject"></textarea>
+        </md-input-container>
+        <div  flex="100">
+          <md-button class="md-primary md-raised">send</md-button>
+
+
+        </div>
+        <!-- Contact Company -->
+        <!-- <md-input-container flex="100">
+          <label>Email</label>
+          <input name="company" type="text" ng-model="vm.contact.email" id="company" required>
+        </md-input-container> -->
+      </div>
+      </md-card-content>
+    </md-card>
+  </div>
+</section>

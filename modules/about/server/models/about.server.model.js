@@ -10,43 +10,24 @@ var mongoose = require('mongoose'),
  * Article Schema
  */
 var AboutSchema = new Schema({
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  position: {
+  intro: {
     type: String,
     default: '',
-    trim: true,
-    required: 'Position cannot be blank'
+    trim: true
   },
-  date: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Date cannot be blank'
+  softwareSkills: {
+    type: Array,
+    default: [],
+    trim: true
   },
-  company: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Company cannot be blank'
+  designSkills: {
+    type: Array,
+    default: [],
+    trim: true
   },
-  role: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Role cannot be blank'
-  },
-  result: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Result cannot be blank'
-  },
-  order: {
-    type: Number,
-    default: 0,
+  multiMediaSkills: {
+    type: Array,
+    default: [],
     trim: true
   },
   user: {

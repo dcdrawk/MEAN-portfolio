@@ -2,16 +2,60 @@
 <div class="heading animate-fade-in" animate-on-load>
   <h2 class="md-display-1 container">About</h2>
 </div>
-
-<section ng-controller="HomeController" class="container margin-top">
+<section class="container margin-top">
+  <md-button ng-if="!vm.editing && vm.authentication.user" class="md-accent md-raised md-fab add-button animate-scale"
+             ng-click="vm.editAbout();" animate-on-load>
+    <md-icon class="material_icons">edit</md-icon>
+  </md-button>
+  <md-button ng-if="vm.editing && vm.authentication.user" class="md-primary md-raised md-fab add-button"
+             ng-click="vm.saveAbout();" animate-on-load>
+    <md-icon class="material_icons">save</md-icon>
+  </md-button>
   <md-card class="no-margin-h">
-    <md-card-content>
-      <p>
-        I have a passion for all things web, and I take pride in crafting clean and compelling user experiences. I currently work as a Front-End Developer in the Lower Mainland, creating powerful and robust Web Apps. With over 2 years of Web Development experience under my belt, I am still learning more each day. I graduated with a Bachelor of Arts from SFU's Interactive Arts and Technology program in 2015.
+    <md-card-content ng-switch="vm.editing">
+      <p ng-switch-when="false">
+        {{vm.aboutInfo.intro}}
+        
+        <!--        I have a passion for all things web, and I take pride in crafting clean and compelling user experiences. I currently work as a Front-End Developer in the Lower Mainland, creating powerful and robust Web Apps. With over 2 years of Web Development experience under my belt, I am still learning more each day. I graduated with a Bachelor of Arts from SFU's Interactive Arts and Technology program in 2015.-->
       </p>
+      
+      <div ng-switch-when="true" layout="column">
+        <md-input-container flex="100" class="no-margin-b" >
+          <label for="intro">About Myself</label>
+          <textarea ng-model="vm.aboutInfo.intro"></textarea>
+        </md-input-container>
+      </div>
+      
     </md-card-content>
   </md-card>
 </section>
 <div class="heading animate-fade-in" animate-on-load>
   <h2 class="md-display-1 container">Skills</h2>
 </div>
+
+<section class="container margin-top skills-list" ng-switch="vm.editing">
+
+  <div ng-switch-when="false" layout="row">
+    <div flex="33" class="center-text">
+      <p class="md-title">Software</p>
+      <p ng-repeat="skill in vm.aboutInfo.softwareSkills">{{skill}}</p>
+    </div>
+    <div flex="33" class="center-text">
+      <p class="md-title">Design</p>
+      <p ng-repeat="skill in vm.aboutInfo.designSkills">{{skill}}</p>
+    </div>
+    <div flex="33" class="center-text">
+      <p class="md-title">Multi-Media</p>
+      <p ng-repeat="skill in vm.aboutInfo.multiMediaSkills">{{skill}}</p>
+    </div>
+  </div>
+
+  <div ng-switch-when="true">
+    <label>Software</label>
+    <md-chips class="padding-b" ng-model="vm.aboutInfo.softwareSkills" readonly="false" placeholder="Enter a Skill" delete-button-label="Remove Skill" delete-hint="Press delete to remove a skill" secondary-placeholder="+Skill"></md-chips>
+    <label>Design</label>
+    <md-chips class="padding-b" ng-model="vm.aboutInfo.designSkills" readonly="false" placeholder="Enter a Skill" delete-button-label="Remove Skill" delete-hint="Press delete to remove a skill" secondary-placeholder="+Skill"></md-chips>
+    <label>Multi-Media</label>
+    <md-chips class="padding-b" ng-model="vm.aboutInfo.multiMediaSkills" readonly="false" placeholder="Enter a Skill" delete-button-label="Remove Skill" delete-hint="Press delete to remove a skill" secondary-placeholder="+Skill"></md-chips>
+  </div>
+</section>

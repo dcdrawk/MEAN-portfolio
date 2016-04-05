@@ -1,3 +1,6 @@
+.skills-list p {
+  margin: 4px 0; }
+
 p {
   font-size: 1.6rem;
   font-weight: 400;
@@ -12,6 +15,8 @@ header {
   background-color: #009688;
   color: #fff;
   height: 176px; }
+  header .portfolio-header {
+    height: 128px; }
   header h1 {
     margin-top: 32px;
     color: #fff; }
@@ -27,6 +32,8 @@ header {
     color: #fff;
     background: #FFC107;
     height: 4px; }
+  header .navigation-bar {
+    background-color: #00897B; }
 
 .user-menu {
   float: right;
@@ -82,6 +89,9 @@ header {
 
 .no-margin-v {
   margin-top: 0;
+  margin-bottom: 0; }
+
+.no-margin-b {
   margin-bottom: 0; }
 
 .margin-v {
@@ -240,7 +250,7 @@ ui-view.ng-leave {
   -webkit-transition: 500ms cubic-bezier(0.19, 1, 0.22, 1) all 500ms;
   transition: 500ms cubic-bezier(0.19, 1, 0.22, 1) all 500ms;
   transition-delay: 5s;
-  transform: scale3d(1, 1, 1) rotate(0deg); }
+  transform: scale3d(1, 1, 1) rotate(360deg); }
 
 .animate-scale.ng-move,
 .animate-scale.ng-enter,
@@ -253,13 +263,13 @@ ui-view.ng-leave {
 .animate-scale.ng-move,
 .animate-scale.ng-enter {
   opacity: 0;
-  transform: scale3d(0, 0, 0) rotate(360deg); }
+  transform: scale3d(0, 0, 0) rotate(0deg); }
 
 .animate-scale.ng-leave,
 .animate-scale.ng-move.ng-move-active,
 .animate-scale.ng-enter.ng-enter-active {
   opacity: 1;
-  transform: scale3d(1, 1, 1) rotate(0deg); }
+  transform: scale3d(1, 1, 1) rotate(360deg); }
 
 ddn-sticky-wrapper,
 ddn-sticky {

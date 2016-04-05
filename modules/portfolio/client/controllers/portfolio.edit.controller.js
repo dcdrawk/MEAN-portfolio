@@ -8,7 +8,7 @@
   // ArticleViewController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function PortfolioEditController($location, $state, Authentication, portfolio, $scope) {
+  function PortfolioEditController($location, $state, Authentication, Portfolio, $scope) {
     var vm = this;
     vm.authentication = Authentication;
     vm.portfolio = portfolio;

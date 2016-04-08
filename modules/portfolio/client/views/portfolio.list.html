@@ -13,7 +13,7 @@
         No Portfolio Items yet, why don't you create one?
       </md-card>
     </div>
-    <div class="animate-repeat" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.projectList | orderBy: 'position'" animate-on-load>
+    <div class="animate-repeat animate-move-up animate-fade-in" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.projectList | orderBy: 'position'" animate-on-load>
       <!-- <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
       <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap style="background: url({{portfolio.cardImgSrc}}); background-size: 100%; background-position: center;">
         <div class="portfolio-card-text md-padding" flex="100">
@@ -26,12 +26,12 @@
 </section>
 
 <div ng-if="vm.showWebsites">
-  <div class="heading animate-fade-in animate-repeat padding-t" animate-on-load>
+  <div class="heading animate-fade-in animate-fade-in animate-move-up padding-t" animate-on-load>
     <h2 class="md-display-1 container">Websites</h2>
   </div>
   <section class="container">
     <div layout="row" layout-fill layout-wrap class="clear-both">
-      <div class="animate-repeat" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.websiteList | orderBy: 'position'" animate-on-load>
+      <div class="animate-repeat animate-move-up animate-fade-in" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.websiteList | orderBy: 'position'" animate-on-load>
         <!-- <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
         <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap style="background: url({{portfolio.cardImgSrc}}); background-size: 100%; background-position: center;">
           <div class="portfolio-card-text md-padding" flex="100">

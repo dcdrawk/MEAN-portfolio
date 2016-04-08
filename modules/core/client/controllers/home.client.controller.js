@@ -18,9 +18,15 @@
   // HomeController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function HomeController($scope, Authentication, aboutInfo) {
+  function HomeController($scope, $sce, Authentication) {
     var vm = this;
-    vm.aboutInfo = aboutInfo[0];
+    console.log('HOMO');
+//    aboutInfo[0].intro = $sce.trustAsHtml(aboutInfo[0].intro);
+//    vm.aboutInfo = aboutInfo[0];
+    
+//    vm.aboutInfo.intro = 'dwadadwa';
+//    console.log(vm.aboutInfo.intro);
+//    vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro);
     vm.editing = false;
     vm.authentication = Authentication;
     //    console.log(aboutInfo);
@@ -33,6 +39,14 @@
     };
 
     vm.saveAbout = function (isValid) {
+//      vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro);
+      console.log(vm.aboutInfo.intro.valueOf());
+      vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro.valueOf());
+      
+      vm.aboutInfo.intro = vm.aboutInfo.intro.valueOf();
+      console.log(vm.aboutInfo.intro);
+      
+
       vm.error = null;
 //      if (!isValid) {
 //        $scope.$broadcast('show-errors-check-validity');
@@ -42,10 +56,11 @@
       about.$update(function() {
         console.log('about updated');
         vm.editAbout();
+        vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro);
       }, function (errorResponse) {
         vm.error = errorResponse.data.message;
       });
-      
+       
     };
 
 //    vm.update = function (isValid) {

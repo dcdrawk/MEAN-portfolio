@@ -11,7 +11,7 @@
   function PortfolioEditController($location, $state, Authentication, Portfolio, $scope) {
     var vm = this;
     vm.authentication = Authentication;
-    vm.portfolio = portfolio;
+    vm.portfolio = Portfolio;
     vm.portfolio.position = parseInt(vm.portfolio.position);
     // Update existing Article
     vm.update = function(isValid) {
@@ -23,7 +23,7 @@
         return false;
       }
 
-      var portfolio = vm.portfolio;
+      var portfolio = vm.ortfolio;
 
       portfolio.$update(function() {
         $location.path('portfolio/' + portfolio._id);

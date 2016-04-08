@@ -9,7 +9,7 @@ angular.module('contact').config(['$stateProvider',
         // abstract: true,
         url: '/contact',
         templateUrl: 'modules/contact/client/views/contact.view.html',
-        controller: 'ContactListController',
+        controller: 'ContactViewController',
         controllerAs: 'vm',
         resolve: {
           contactList: function(Contact) {

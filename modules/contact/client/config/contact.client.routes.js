@@ -6,7 +6,6 @@ angular.module('contact').config(['$stateProvider',
     // Articles state routing
     $stateProvider
       .state('contact', {
-        // abstract: true,
         url: '/contact',
         templateUrl: 'modules/contact/client/views/contact.view.html',
         controller: 'ContactViewController',
@@ -19,14 +18,12 @@ angular.module('contact').config(['$stateProvider',
       })
       .state('contact-create', {
         url: '/contact/create',
-        // templateUrl: 'modules/contact/client/views/contact.create.html',
         templateUrl: 'modules/contact/client/views/contact.create.html',
         controller: 'ContactCreateController',
         controllerAs: 'vm'
       })
       .state('contact-edit', {
         url: '/contact/edit/:contactId',
-        // templateUrl: 'modules/contact/client/views/contact.create.html',
         templateUrl: 'modules/contact/client/views/contact.edit.html',
         controller: 'ContactEditController',
         controllerAs: 'vm',

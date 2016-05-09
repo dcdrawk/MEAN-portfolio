@@ -76,6 +76,12 @@ module.exports = {
       }
     }
   },
+  message: {
+    from: process.env.MAILER_FROM || 'MAILER_FROM',
+    options: {
+      service: process.env.MAILER_SERVICE_PROVIDER || 'MAILER_SERVICE_PROVIDER',
+    }
+  },
   seedDB: {
     seed: process.env.MONGO_SEED === 'true' ? true : false,
     options: {

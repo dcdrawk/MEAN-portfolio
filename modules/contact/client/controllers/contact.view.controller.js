@@ -8,11 +8,11 @@
   // ContactViewController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function ContactViewController($location, $state, Authentication, contactList, Contact) {
+  function ContactViewController($location, $state, $http, Authentication, contactList, Contact) {
     var vm = this;
     vm.authentication = Authentication;
     vm.contact = contactList[0];
-
+//    vm.message = {};
     vm.create = function (isValid, item) {
       vm.error = null;
 
@@ -41,6 +41,17 @@
       }, function (errorResponse) {
         vm.error = errorResponse.data.message;
       });
+    };
+
+    vm.sendMessage = function (message) {
+      console.log('send that message!');
+      var data = ({
+        subject: this.subject,
+        text: this.text,
+        //          contactEmail : this.contactEmail,
+        //          contactMsg : this.contactMsg
+      });
+      $http.post('/api/contact-form', vm.message);
     };
     // Edit existing contact
     //    vm.edit = function(contact) {

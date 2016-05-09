@@ -15,11 +15,6 @@ angular.module('portfolio').config(['$stateProvider',
         templateUrl: 'modules/portfolio/client/views/portfolio.list.html',
         controller: 'PortfolioListController',
         controllerAs: 'vm',
-        // resolve: {
-        //   portfolioList: function(Portfolio) {
-        //     return Portfolio.query().$promise;
-        //   }
-        // }
         resolve: {
           portfolioList: function(dataService) {
             return dataService.get('api/portfolio/typelist').then(function(data){

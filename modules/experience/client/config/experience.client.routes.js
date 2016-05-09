@@ -20,13 +20,6 @@ angular.module('experience').config(['$stateProvider',
             return Experience.query().$promise;
           }
         }
-        // resolve: {
-        //   experienceList: function(dataService) {
-        //     return dataService.get('api/experience/typelist').then(function(data){
-        //       return data;
-        //     });
-        //   }
-        // }
       })
       .state('experience.create', {
         url: '/create',

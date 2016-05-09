@@ -59,18 +59,11 @@
         </md-input-container>
         <md-input-container flex="100">
           <label>Message</label>
-          <textarea name="subject" type="text" ng-model="vm.message.body" id="subject"></textarea>
+          <textarea name="subject" type="text" ng-model="vm.message.text" id="subject"></textarea>
         </md-input-container>
         <div  flex="100">
-          <md-button class="md-primary md-raised">send</md-button>
-
-
+          <md-button class="md-primary md-raised" ng-click="vm.sendMessage()">send</md-button>
         </div>
-        <!-- Contact Company -->
-        <!-- <md-input-container flex="100">
-          <label>Email</label>
-          <input name="company" type="text" ng-model="vm.contact.email" id="company" required>
-        </md-input-container> -->
       </div>
       </md-card-content>
     </md-card>

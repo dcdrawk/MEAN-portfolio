@@ -18,15 +18,14 @@
   // HomeController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function HomeController($scope, $sce, Authentication) {
+  function HomeController($scope, $sce, Authentication, aboutInfo) {
     var vm = this;
-    console.log('HOMO');
-//    aboutInfo[0].intro = $sce.trustAsHtml(aboutInfo[0].intro);
-//    vm.aboutInfo = aboutInfo[0];
+  //  aboutInfo[0].intro = $sce.trustAsHtml(aboutInfo[0].intro);
+   vm.aboutInfo = aboutInfo[0];
     
 //    vm.aboutInfo.intro = 'dwadadwa';
 //    console.log(vm.aboutInfo.intro);
-//    vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro);
+    vm.aboutInfo.intro = $sce.trustAsHtml(vm.aboutInfo.intro);
     vm.editing = false;
     vm.authentication = Authentication;
     //    console.log(aboutInfo);

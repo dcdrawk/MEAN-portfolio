@@ -42,16 +42,13 @@ module.exports = {
       'modules/*/client/*.js',
       'modules/*/client/**/*.js'
     ],
-<<<<<<< HEAD
     img: [
       'modules/**/*/img/**/*.jpg',
       'modules/**/*/img/**/*.png',
       'modules/**/*/img/**/*.gif',
       'modules/**/*/img/**/*.svg'
-=======
     images: [
       'public/images/**/*.jpg'
->>>>>>> material
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']

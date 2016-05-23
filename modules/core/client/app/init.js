@@ -82,17 +82,17 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
     // If number of properties is different,
     // objects are not equivalent
     if (aProps.length !== bProps.length) {
-        return false;
+      return false;
     }
 
     for (var i = 0; i < aProps.length; i++) {
-        var propName = aProps[i];
+      var propName = aProps[i];
 
-        // If values of same property are not equal,
-        // objects are not equivalent
-        if (a[propName] !== b[propName]) {
-            return false;
-        }
+      // If values of same property are not equal,
+      // objects are not equivalent
+      if (a[propName] !== b[propName]) {
+        return false;
+      }
     }
 
     // If we made it this far, objects

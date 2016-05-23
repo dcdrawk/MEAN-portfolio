@@ -54,7 +54,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'modules/core/client/views/full.view.html',
         views: {
           //About
-          "about@full": {
+          'about@full': {
             templateUrl: 'modules/core/client/views/home.client.view.html',
             controller: 'HomeController',
             controllerAs: 'vm',
@@ -65,7 +65,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
             }
           },
           //Portfolio
-          "portfolio@full": {
+          'portfolio@full': {
             templateUrl: 'modules/portfolio/client/views/portfolio.list.html',
             controller: 'PortfolioListController',
             controllerAs: 'vm',
@@ -78,7 +78,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
             }
           },
           //Experience
-          "experience@full": {
+          'experience@full': {
             templateUrl: 'modules/experience/client/views/experience.list.html',
             controller: 'ExperienceListController',
             controllerAs: 'vm',
@@ -89,7 +89,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
             }
           },
           //Contact
-          "contact@full": {
+          'contact@full': {
             templateUrl: 'modules/contact/client/views/contact.view.html',
             controller: 'ContactViewController',
             controllerAs: 'vm',
@@ -99,7 +99,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
               }
             }
           },
-          "": {
+          '': {
             templateUrl: 'modules/core/client/views/full.view.html'
           }
         }

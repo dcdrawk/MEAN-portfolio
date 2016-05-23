@@ -8,14 +8,16 @@
   // ExperienceController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function ExperienceListController($location, Authentication, experienceList, Experience, $timeout) {
+  function ExperienceListController($location, $rootScope, Authentication, experienceList, Experience, $timeout) {
     var vm = this;
     vm.authentication = Authentication;
     vm.experienceList = experienceList;
-
+    $rootScope.activeTab = 'Experience';
+    console.log($rootScope);
+    
     vm.create = function(isValid, item) {
       vm.error = null;
-
+      
       // if (!isValid) {
       //   vm.$broadcast('show-errors-check-validity', 'articleForm');
       //

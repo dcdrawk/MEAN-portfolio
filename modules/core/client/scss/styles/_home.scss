@@ -1,0 +1,25 @@
+//Intro
+.intro-text {
+  p {
+    &:first-child {
+      margin-top: 0px;
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+//Skills
+.skills-list {
+  p {
+    margin: 4px 0;
+  }
+}
+
+.home-full {
+  [ui-view] {
+    margin-bottom: 2em;
+  }
+}

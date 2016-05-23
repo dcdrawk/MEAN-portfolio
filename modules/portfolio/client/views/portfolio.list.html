@@ -1,9 +1,7 @@
-<!-- <div class="page-background portfolio-background"></div> -->
-<div class="heading animate-fade-in" animate-on-load>
+<div class="heading animate-fade-in animate-move-up" animate-on-load>
   <h2 class="md-display-1 container">Projects</h2>
 </div>
 <section class="container">
-  <!-- {{vm.portfolioList}} -->
   <md-button class="md-accent md-raised md-fab add-button animate-scale" ng-if="vm.authentication.user" ui-sref="portfolio.create" animate-on-load>
     <md-icon class="material_icons">add</md-icon>
   </md-button>
@@ -14,7 +12,6 @@
       </md-card>
     </div>
     <div class="animate-repeat animate-move-up animate-fade-in" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.projectList | orderBy: 'position'" animate-on-load>
-      <!-- <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
       <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap style="background: url({{portfolio.cardImgSrc}}); background-size: 100%; background-position: center;">
         <div class="portfolio-card-text md-padding" flex="100">
           <h4 class="md-title" ng-bind="portfolio.title"></h4>
@@ -26,13 +23,12 @@
 </section>
 
 <div ng-if="vm.showWebsites">
-  <div class="heading animate-fade-in animate-fade-in animate-move-up padding-t" animate-on-load>
+  <div class="heading animate-fade-in animate-move-up padding-t" animate-on-load>
     <h2 class="md-display-1 container">Websites</h2>
   </div>
   <section class="container">
     <div layout="row" layout-fill layout-wrap class="clear-both">
       <div class="animate-repeat animate-move-up animate-fade-in" flex="33" flex-xs="100" flex-sm="100" ng-repeat="portfolio in vm.websiteList | orderBy: 'position'" animate-on-load>
-        <!-- <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
         <md-card ui-sref="portfolio.view({portfolioId: portfolio._id})" class="md-padding portfolio-card sandwich" layout="row" layout-align="start end" layout-wrap style="background: url({{portfolio.cardImgSrc}}); background-size: 100%; background-position: center;">
           <div class="portfolio-card-text md-padding" flex="100">
             <h4 class="md-title" ng-bind="portfolio.title"></h4>

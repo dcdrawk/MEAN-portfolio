@@ -1,5 +1,5 @@
 <!-- <div class="page-background experience-background"></div> -->
-<div class="heading animate-fade-in" animate-on-load>
+<div class="heading animate-fade-in animate-move-up" animate-on-load>
   <h2 class="md-display-1 container">Experience</h2>
 </div>
 <section class="container">
@@ -13,17 +13,19 @@
         No Experience Items yet, why don't you create one?
       </md-card>
     </div>
-    <div class="animate-repeat animate-move-up animate-fade-in" layout="column" ng-repeat="experience in vm.experienceList | orderBy: 'order'" animate-on-load>
-      <!-- <md-card ui-sref="experience.view({experienceId: experience._id})" class="md-padding experience-card sandwich" layout="row" layout-align="start end" layout-wrap> -->
-      <md-card class="md-padding no-margin-h" flex="100">
-        <div class="experience-card-text md-padding">
+    <md-card class="md-padding no-margin-h animate-move-up animate-fade-in" flex="100" animate-on-load>
+      <div class="animate-repeat" layout="column" ng-repeat="experience in vm.experienceList | orderBy: 'order'">
+        <div class="experience-card-text">
           <h4 class="md-title">{{experience.position}}</h4>
           <h5 class="md-subhead">{{experience.company}} {{experience.date}}</h5>
           <p>{{experience.role}}</p>
           <p>{{experience.result}}</p>
-          <md-button ng-show="vm.authentication.user" class="no-margin" ui-sref="experience.edit({ 'experienceId': experience._id })">Edit</md-button>
+          <md-button ng-show="vm.authentication.user" class="no-margin" ui-sref="experience.edit({ 'experienceId': experience._id })">
+            Edit
+          </md-button>
         </div>
-      </md-card>
-    </div>
+        <md-divider ng-if="$index !== vm.experienceList.length-1"></md-divider>
+      </div>
+    </md-card>
   </div>
 </section>

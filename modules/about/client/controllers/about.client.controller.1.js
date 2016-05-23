@@ -2,35 +2,35 @@
   'use strict';
 
   angular
-    .module('experience')
-    .controller('ExperienceController', ExperienceController);
+    .module('about')
+    .controller('AboutController', AboutController);
 
-  // ExperienceController.$inject = ['dependencies'];
+  // aboutController.$inject = ['dependencies'];
 
   /* @ngInject */
-  function ExperienceController($location, Authentication, Experience, $rootScope) {
+  function AboutController($location, Authentication, About) {
     var vm = this;
     vm.authentication = Authentication;
     vm.test = 'test';
-    
+
     vm.create = function (isValid, item) {
       vm.error = null;
-      
+
       // if (!isValid) {
       //   vm.$broadcast('show-errors-check-validity', 'articleForm');
       //
       //   return false;
       // }
 
-      // Create new Experience object
-      var experience = new Experience({
+      // Create new About object
+      var about = new About({
         title: vm.title,
         content: vm.content
       });
 
       // Redirect after save
-      experience.$save(function (response) {
-        $location.path('experience/' + response._id);
+      about.$save(function (response) {
+        $location.path('about/' + response._id);
 
         // Clear form fields
         vm.title = '';
@@ -43,7 +43,7 @@
     activate();
 
     function activate() {
-      vm.experienceList = Experience.query();
+      vm.aboutList = About.query();
     }
   }
 })();

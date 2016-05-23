@@ -12,10 +12,23 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
   }
 ]);
 
-angular.module(ApplicationConfiguration.applicationModuleName).run(function ($rootScope, $state, Authentication) {
-
+angular.module(ApplicationConfiguration.applicationModuleName).run(function ($rootScope, $state, Authentication, $document) {
+  var scrollHistory = {};
+  
   // Check authentication before changing state
   $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
+    var stateKey = getStateKey(fromState, fromParams);
+    console.log(stateKey);
+    scrollHistory[stateKey] = $document[0].body.scrollTop;
+    // if(previousState && newState && isEquivalent(previousState, newState)){
+    //   console.log('going back to a previous state...');
+    // }
+    
+    // previousState = {
+    //   "state": fromState,
+    //   "params": fromParams
+    // };
+    
     if (toState.data && toState.data.roles && toState.data.roles.length > 0) {
       var allowed = false;
       toState.data.roles.forEach(function (role) {
@@ -40,8 +53,52 @@ angular.module(ApplicationConfiguration.applicationModuleName).run(function ($ro
 
   // Record previous state
   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+    var stateKey = getStateKey(toState, toParams);
+    
+    if (scrollHistory.hasOwnProperty(stateKey)) {
+      $document[0].body.scrollTop = scrollHistory[stateKey];
+      console.log(scrollHistory[stateKey]);
+    } else {
+      $document[0].body.scrollTop = 0;
+    }
+    
     storePreviousState(fromState, fromParams);
   });
+  
+  function getStateKey(state, params){
+    var stateName = state.name;
+    var stateParams = '';
+    for(var i in params) {
+      stateParams += params[i];
+    }
+    return stateName+stateParams;    
+  }
+  
+  function isEquivalent(a, b) {
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length !== bProps.length) {
+        return false;
+    }
+
+    for (var i = 0; i < aProps.length; i++) {
+        var propName = aProps[i];
+
+        // If values of same property are not equal,
+        // objects are not equivalent
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
+  }
 
   // Store previous state
   function storePreviousState(state, params) {

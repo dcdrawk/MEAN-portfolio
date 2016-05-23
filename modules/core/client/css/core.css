@@ -6,6 +6,9 @@
 .skills-list p {
   margin: 4px 0; }
 
+.home-full [ui-view] {
+  margin-bottom: 2em; }
+
 p {
   font-size: 1.6rem;
   font-weight: 400;
@@ -17,6 +20,7 @@ p {
   text-align: center; }
 
 header {
+  z-index: 25;
   background-color: #009688;
   color: #fff;
   height: 176px; }
@@ -311,7 +315,8 @@ ddn-sticky {
   display: block; }
 
 ddn-sticky-wrapper {
-  opacity: .9; }
+  opacity: .9;
+  height: 48px !important; }
 
 ddn-sticky-wrapper > ddn-sticky {
   z-index: 1; }
@@ -321,6 +326,8 @@ ddn-sticky-wrapper > ddn-sticky.fixed {
   top: 0;
   width: 100%;
   z-index: 0; }
+  ddn-sticky-wrapper > ddn-sticky.fixed .user-menu {
+    display: none; }
 
 ddn-sticky-wrapper > ddn-sticky.fixed.absolute {
   position: absolute; }

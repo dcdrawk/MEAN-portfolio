@@ -1,0 +1,54 @@
+<section class="container">
+  <div class="page-heading animate-fade-in" animate-on-load>
+
+    <!-- Portfolio Heading / Date -->
+    <h2 class="md-display-1" ng-bind="vm.portfolio.title"></h2>
+
+    <!-- Content Edit Buttons -->
+    <div class="content-buttons" ng-show="vm.authentication.user._id == vm.portfolio.user._id">
+      <md-button class="md-accent md-raised" ng-if="vm.authentication.user" ng-click="vm.edit(vm.portfolio);">
+        edit
+      </md-button>
+      <md-button class="md-warn md-raised" ng-if="vm.authentication.user" ng-click="vm.remove();">
+        delete
+      </md-button>
+    </div>
+
+    <h2 class="md-title" ng-bind="vm.portfolio.subtitle"></h2>
+    <span ng-bind="vm.portfolio.date"></span>
+  </div>
+  <div class="clearfix"></div>
+
+  <!-- Portfolio Content -->
+  <div layout="column">
+    <md-card class="md-padding no-margin-h animate-fade-in" layout="row" layout-wrap layout-align="center start" animate-on-load>
+      <div flex="66" class="padding-b" ng-if="vm.portfolio.youtubeLink">
+        <a class="md-whiteframe-z1" ob-lazytube href="{{vm.portfolio.youtubeLink}}">The Sandwich</a>
+      </div>
+      <div layout="row" layout-wrap>
+
+        <div ng-if="vm.portfolio.type == 'project' && vm.portfolio.picture" flex="33" class="padding-r padding-b">
+          <img ng-cloak src="{{vm.portfolio.picture}}"/>
+        </div>
+        <div ng-if="vm.portfolio.type == 'website' && vm.portfolio.picture" flex="50" class="padding-r padding-b">
+          <img ng-cloak src="{{vm.portfolio.picture}}"/>
+        </div>
+        <div flex>
+          <div class="md-body-1" ng-bind-html="vm.portfolio.content"></div>
+          <md-button ng-if="vm.portfolio.githubLink" href="{{vm.portfolio.githubLink}}" target="_blank" class="md-raised">View on Github</md-button>
+          <md-button ng-if="vm.portfolio.appLink" href="{{vm.portfolio.appLink}}" target="_blank"  class="md-primary md-raised">Launch App</md-button>
+        </div>
+      </div>
+      <div flex="100">
+        <md-divider></md-divider>
+        <h4 class="md-title">Roles</h4>
+        <md-chips ng-model="vm.portfolio.roles" readonly="true"></md-chips>
+      </div>
+      <div flex="100">
+        <md-divider></md-divider>
+        <h4 class="md-title">Tags</h4>
+        <md-chips ng-model="vm.portfolio.tags" readonly="true"></md-chips>
+      </div>
+    </md-card>
+  </div>
+</section>

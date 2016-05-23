@@ -1,52 +1,90 @@
-(function () {
-  'use strict';
-
-  angular
-    .module('articles')
-    .controller('ArticlesController', ArticlesController);
-
-  ArticlesController.$inject = ['$scope', '$state', 'articleResolve', 'Authentication'];
-
-  function ArticlesController($scope, $state, article, Authentication) {
-    var vm = this;
-
-    vm.article = article;
-    vm.authentication = Authentication;
-    vm.error = null;
-    vm.form = {};
-    vm.remove = remove;
-    vm.save = save;
-
-    // Remove existing Article
-    function remove() {
-      if (confirm('Are you sure you want to delete?')) {
-        vm.article.$remove($state.go('articles.list'));
-      }
-    }
-
-    // Save Article
-    function save(isValid) {
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'vm.form.articleForm');
-        return false;
-      }
-
-      // TODO: move create/update logic to service
-      if (vm.article._id) {
-        vm.article.$update(successCallback, errorCallback);
-      } else {
-        vm.article.$save(successCallback, errorCallback);
-      }
-
-      function successCallback(res) {
-        $state.go('articles.view', {
-          articleId: res._id
-        });
-      }
-
-      function errorCallback(res) {
-        vm.error = res.data.message;
-      }
-    }
-  }
-})();
+// 'use strict';
+//
+// // Articles controller
+// angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$state', '$location', 'Authentication', 'Articles',
+//   function ($scope, $stateParams, $state, $location, Authentication, Articles) {
+//     $scope.authentication = Authentication;
+//
+//     // $scope.create = function (isValid) {
+//     //   $scope.error = null;
+//     //
+//     //   if (!isValid) {
+//     //     $scope.$broadcast('show-errors-check-validity', 'articleForm');
+//     //
+//     //     return false;
+//     //   }
+//     //
+//     //   // Create new Article object
+//     //   var article = new Articles({
+//     //     title: this.title,
+//     //     content: this.content
+//     //   });
+//     //
+//     //   // Redirect after save
+//     //   article.$save(function (response) {
+//     //     $location.path('articles/' + response._id);
+//     //
+//     //     // Clear form fields
+//     //     $scope.title = '';
+//     //     $scope.content = '';
+//     //   }, function (errorResponse) {
+//     //     $scope.error = errorResponse.data.message;
+//     //   });
+//     // };
+//
+//     // Edit existing Article
+//     // $scope.edit = function (article) {
+//     //   console.log(article);
+//     //   $state.go('articles.edit', { 'articleId': article._id });
+//     // };
+//
+//     // Remove existing Article
+//     // $scope.remove = function (article) {
+//     //   if (article) {
+//     //     article.$remove();
+//     //
+//     //     for (var i in $scope.articles) {
+//     //       if ($scope.articles[i] === article) {
+//     //         $scope.articles.splice(i, 1);
+//     //       }
+//     //     }
+//     //   } else {
+//     //     $scope.article.$remove(function () {
+//     //       $location.path('articles');
+//     //     });
+//     //   }
+//     // };
+//
+//     // Update existing Article
+//     // $scope.update = function (isValid) {
+//     //   $scope.error = null;
+//     //
+//     //   if (!isValid) {
+//     //     $scope.$broadcast('show-errors-check-validity', 'articleForm');
+//     //
+//     //     return false;
+//     //   }
+//     //
+//     //   var article = $scope.article;
+//     //
+//     //   article.$update(function () {
+//     //     $location.path('articles/' + article._id);
+//     //   }, function (errorResponse) {
+//     //     $scope.error = errorResponse.data.message;
+//     //   });
+//     // };
+//
+//     // Find a list of Articles
+//     // $scope.find = function () {
+//     //   $scope.articles = Articles.query();
+//     // };
+//
+//     // Find existing Article
+//     // $scope.findOne = function () {
+//     //   // $scope.article = Articles.get({
+//     //   //   articleId: $stateParams.articleId
+//     //   // });
+//     //   // $scope.article = Article;
+//     // };
+//   }
+// ]);

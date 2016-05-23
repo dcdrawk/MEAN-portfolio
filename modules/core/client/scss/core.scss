@@ -1,0 +1,37 @@
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300);
+@import 'styles/home';
+@import 'styles/variables';
+@import 'styles/typography';
+@import 'styles/header';
+@import 'styles/buttons';
+@import 'styles/layout';
+@import 'styles/page-header';
+@import 'styles/backgrounds';
+@import 'styles/scrollbar';
+@import 'animation/view';
+@import 'animation/scale';
+@import 'styles/sticky-header';
+@include scrollbars(10px, #FFC107, #607D8B);
+// .navbar-header {
+//     color: red;
+// }
+.nav > li > a > img {
+    max-width: 18px;
+}
+header {
+    position: relative;
+}
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+}
+body {
+  background-color: #F5F5F5;
+  font-family: 'Roboto';
+  z-index: 1;
+}
+
+.clear-both {
+  clear:both;
+}

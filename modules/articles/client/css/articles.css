@@ -1,0 +1,36 @@
+.article-list md-card {
+  margin-left: 0;
+  margin-right: 0; }
+
+.article-card {
+  margin-left: 0;
+  margin-right: 0; }
+  .article-card md-divider {
+    margin: 16px 0; }
+
+.article-content {
+  white-space: pre-line;
+  margin-bottom: 0; }
+
+md-input-container.input-title label:not(.md-no-float):not(.md-container-ignore) {
+  transform: translate3d(0, 48px, 0) scale(1);
+  font-size: 16px; }
+md-input-container.input-title input {
+  font-size: 32px;
+  height: 48px;
+  line-height: 48px; }
+
+md-input-container.md-input-focused.input-title label:not(.md-no-float):not(.md-container-ignore),
+md-input-container.md-input-has-value.input-title label:not(.md-no-float):not(.md-container-ignore) {
+  transform: translate3d(0, 16px, 0) scale(0.75);
+  font-size: 16px; }
+
+md-input-container.input-content textarea {
+  font-size: 16px;
+  line-height: 24px; }
+
+.portfolio-background {
+  background: url("/modules/articles/client/img/mountains.jpg");
+  -webkit-filter: grayscale(1) brightness(1.4) !important; }
+
+/*# sourceMappingURL=articles.css.map */

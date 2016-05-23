@@ -1,0 +1,69 @@
+<section class="container">
+  <!-- Content Edit Buttons -->
+  <div class="content-buttons" ng-show="vm.authentication.user._id == vm.experience.user._id">
+    <md-button class="md-raised md-accent" ng-click="vm.update(experienceForm.$valid);" ng-disabled="!experienceForm.$valid">
+      Update
+    </md-button>
+
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div>
+
+  <!-- Page Heading -->
+  <h2 class="md-display-1">Edit Experience Item</h2>
+
+  <!-- Page Content -->
+  <md-card class="md-padding no-margin-h">
+    <form name="experienceForm" novalidate>
+      <fieldset layout="row" layout-wrap>
+        <!-- Experience Position -->
+        <md-input-container flex="100" class="input-title">
+          <label>Position</label>
+          <input name="title" type="text" ng-model="vm.experience.position" id="title" required>
+        </md-input-container>
+
+        <!-- Experience Company -->
+        <md-input-container flex="100">
+          <label>Company</label>
+          <input name="company" type="text" ng-model="vm.experience.company" id="company" required>
+        </md-input-container>
+
+        <!-- Experience Date -->
+        <md-input-container flex="100">
+          <label>Date</label>
+          <input name="date" type="text" ng-model="vm.experience.date" id="date" required>
+        </md-input-container>
+
+        <!-- Experience Role -->
+        <md-input-container flex="100">
+          <label>Role</label>
+          <textarea name="role" type="text" ng-model="vm.experience.role" id="role" required></textarea>
+        </md-input-container>
+
+        <!-- Experience Result -->
+        <md-input-container flex="100">
+          <label>Result</label>
+          <textarea name="result" type="text" ng-model="vm.experience.result" id="result" required></textarea>
+        </md-input-container>
+
+        <!-- Experience Result -->
+        <md-input-container flex="100">
+          <label>List Order</label>
+          <textarea name="result" type="number" ng-model="vm.experience.order" id="result"></textarea>
+        </md-input-container>
+
+      </fieldset>
+    </form>
+  </md-card>
+  <!-- <div layout="row" layout-align="start center">
+
+    <md-button class="md-raised md-accent" ng-click="vm.update(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
+      Update
+    </md-button>
+
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div> -->
+</section>

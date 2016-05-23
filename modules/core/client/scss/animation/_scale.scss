@@ -1,0 +1,30 @@
+$scale-timing: 500ms;
+$scale-delay: 500ms;
+.animate-scale {
+  opacity            : 1;
+  -webkit-transition : $scale-timing $easeOutExpo all $scale-delay;
+  transition         : $scale-timing $easeOutExpo all $scale-delay;
+  transition-delay   : 5s;
+  transform: scale3d(1, 1, 1) rotate(360deg);
+  // position: relative;
+}
+.animate-scale.ng-move,
+.animate-scale.ng-enter,
+.animate-scale.ng-leave {
+  transition-delay   : 1s;
+  -webkit-transition : $scale-timing $easeOutExpo all $scale-delay;
+  transition         : $scale-timing $easeOutExpo all $scale-delay;
+}
+.animate-scale.ng-leave.ng-leave-active,
+.animate-scale.ng-move,
+.animate-scale.ng-enter {
+  opacity: 0;
+  transform: scale3d(0, 0, 0) rotate(0deg);
+  // transform: translateY(50px);
+}
+.animate-scale.ng-leave,
+.animate-scale.ng-move.ng-move-active,
+.animate-scale.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: scale3d(1, 1, 1) rotate(360deg);
+}

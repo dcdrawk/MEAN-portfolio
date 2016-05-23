@@ -17,32 +17,44 @@
       .state('articles.list', {
         url: '',
         templateUrl: 'modules/articles/client/views/list-articles.client.view.html',
-        controller: 'ArticlesListController',
+        controller: 'ArticleListController',
         controllerAs: 'vm',
-        data: {
-          pageTitle: 'Articles List'
+        resolve: {
+          articles: function($stateParams, Articles) {
+            return Articles.query().$promise;
+          }
         }
       })
       .state('articles.create', {
         url: '/create',
-        templateUrl: 'modules/articles/client/views/form-article.client.view.html',
-        controller: 'ArticlesController',
+        templateUrl: 'modules/articles/client/views/create-article.client.view.html',
+        controller: 'ArticleCreateController',
         controllerAs: 'vm',
-        resolve: {
-          articleResolve: newArticle
-        },
         data: {
           roles: ['user', 'admin'],
           pageTitle : 'Articles Create'
         }
       })
-      .state('articles.edit', {
-        url: '/:articleId/edit',
-        templateUrl: 'modules/articles/client/views/form-article.client.view.html',
-        controller: 'ArticlesController',
+      .state('articles.view', {
+        url: '/:articleId',
+        templateUrl: 'modules/articles/client/views/view-article.client.view.html',
+        controller: 'ArticleViewController',
         controllerAs: 'vm',
         resolve: {
-          articleResolve: getArticle
+          article: function($stateParams, Articles) {
+            return Articles.get({ articleId: $stateParams.articleId }).$promise;
+          }
+        }
+      })
+      .state('articles.edit', {
+        url: '/:articleId/edit',
+        templateUrl: 'modules/articles/client/views/edit-article.client.view.html',
+        controller: 'ArticleEditController',
+        controllerAs: 'vm',
+        resolve: {
+          article: function($stateParams, Articles) {
+            return Articles.get({ articleId: $stateParams.articleId }).$promise;
+          }
         },
         data: {
           roles: ['user', 'admin'],

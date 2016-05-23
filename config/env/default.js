@@ -2,7 +2,7 @@
 
 module.exports = {
   app: {
-    title: 'MEAN.JS',
+    title: 'Devin Cook - Portfolio',
     description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
     keywords: 'mongodb, express, angularjs, node.js, mongoose, passport',
     googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
@@ -41,8 +41,8 @@ module.exports = {
     },
     xssProtection: true
   },
-  logo: 'modules/core/client/img/brand/logo.png',
-  favicon: 'modules/core/client/img/brand/favicon.ico',
+  logo: 'modules/core/client/img/brand/old/dsalogo.png',
+  favicon: 'modules/core/client/img/brand/devin-favicon.ico',
   uploads: {
     profileUpload: {
       dest: './modules/users/client/img/profile/uploads/', // Profile upload destination path

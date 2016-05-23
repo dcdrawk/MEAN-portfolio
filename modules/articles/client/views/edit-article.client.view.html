@@ -1,0 +1,26 @@
+<section class="container">
+  <div class="heading">
+    <h2 class="md-display-1">Edit Article</h2>
+  </div>
+  <md-card class="md-padding no-margin-h">
+    <form name="articleForm" novalidate>
+      <fieldset layout="row" layout-wrap>
+        <md-input-container flex="100" class="input-title">
+          <label>Title</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" required>
+        </md-input-container>
+
+        <md-input-container flex="100" class="input-content">
+          <label>Content</label>
+          <textarea nname="content" ng-model="vm.article.content" id="content"></textarea>
+        </md-input-container>
+      </fieldset>
+    </form>
+  </md-card>
+  <div layout="row" layout-align="start center">
+
+    <md-button class="md-raised md-accent" ng-click="vm.update(articleForm.$valid);">
+      Update
+    </md-button>
+  </div>
+</section>

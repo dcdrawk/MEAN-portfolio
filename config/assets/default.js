@@ -5,7 +5,9 @@ module.exports = {
     lib: {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css'
+        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/angular-material/angular-material.css',
+        'public/lib/ngWig/dist/css/ng-wig.css'
       ],
       js: [
         'public/lib/angular/angular.js',
@@ -16,7 +18,11 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
-        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js'
+        'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
+        'public/lib/angular-aria/angular-aria.js',
+        'public/lib/angular-material/angular-material.js',
+        'public/lib/angular-lazytube/angular-lazytube.js',
+        'public/lib/ngWig/dist/ng-wig.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
@@ -27,7 +33,8 @@ module.exports = {
       'modules/*/client/less/*.less'
     ],
     sass: [
-      'modules/*/client/scss/*.scss'
+      //'modules/*/client/scss/*.scss'
+      'modules/*/client/**/*.scss'
     ],
     js: [
       'modules/core/client/app/config.js',
@@ -35,11 +42,16 @@ module.exports = {
       'modules/*/client/*.js',
       'modules/*/client/**/*.js'
     ],
+<<<<<<< HEAD
     img: [
       'modules/**/*/img/**/*.jpg',
       'modules/**/*/img/**/*.png',
       'modules/**/*/img/**/*.gif',
       'modules/**/*/img/**/*.svg'
+=======
+    images: [
+      'public/images/**/*.jpg'
+>>>>>>> material
     ],
     views: ['modules/*/client/views/**/*.html'],
     templates: ['build/templates.js']

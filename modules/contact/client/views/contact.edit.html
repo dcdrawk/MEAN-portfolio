@@ -1,0 +1,77 @@
+<section class="container">
+  <!-- Content Edit Buttons -->
+  <div class="content-buttons" ng-show="vm.authentication.user._id == vm.contact.user._id">
+    <md-button class="md-raised md-accent" ng-click="vm.update(contactForm.$valid);" ng-disabled="!contactForm.$valid">
+      Update
+    </md-button>
+
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div>
+
+  <!-- Page Heading -->
+  <h2 class="md-display-1">Edit Contact Info</h2>
+
+  <!-- Page Content -->
+  <md-card class="md-padding no-margin-h">
+    <form name="contactForm" novalidate>
+      <form name="contactForm" novalidate>
+        <fieldset layout="row" layout-wrap>
+
+          <!-- Contact Company -->
+          <md-input-container flex="100">
+            <label>Email</label>
+            <input name="company" type="text" ng-model="vm.contact.email" id="company" required>
+          </md-input-container>
+
+          <!-- Contact Date -->
+          <md-input-container flex="100">
+            <label>Phone</label>
+            <input name="phone" type="text" ng-model="vm.contact.phone" id="phone" required>
+          </md-input-container>
+
+          <!-- Contact Role -->
+          <md-input-container flex="100">
+            <label>Address</label>
+            <input name="address" type="text" ng-model="vm.contact.address" id="address" required>
+          </md-input-container>
+
+          <!-- Contact Result -->
+          <md-input-container flex="100">
+            <label>Facebook</label>
+            <input name="facebook" type="text" ng-model="vm.contact.facebook" id="facebook" required>
+          </md-input-container>
+
+          <!-- Contact Result -->
+          <md-input-container flex="100">
+            <label>LinkedIn</label>
+            <input name="linked-in" type="text" ng-model="vm.contact.linkedIn" id="linked-in">
+          </md-input-container>
+
+          <!-- Contact Result -->
+          <md-input-container flex="100">
+            <label>Google+</label>
+            <input name="google-plus" type="text" ng-model="vm.contact.googlePlus" id="google-plus">
+          </md-input-container>
+
+          <!-- Contact Result -->
+          <md-input-container flex="100">
+            <label>Github</label>
+            <input name="github" type="text" ng-model="vm.contact.github" id="github">
+          </md-input-container>
+
+        </fieldset>
+    </form>
+  </md-card>
+  <!-- <div layout="row" layout-align="start center">
+
+    <md-button class="md-raised md-accent" ng-click="vm.update(portfolioForm.$valid);" ng-disabled="!portfolioForm.$valid">
+      Update
+    </md-button>
+
+    <md-button class="md-raised" ng-click="vm.cancel();">
+      Cancel
+    </md-button>
+  </div> -->
+</section>

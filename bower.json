@@ -14,7 +14,9 @@
     "angular-ui-router": "~0.2",
     "angular-ui-utils": "bower",
     "bootstrap": "~3",
-    "owasp-password-strength-test": "~1.3.0"
+    "owasp-password-strength-test": "~1.3.0",
+    "angular-lazytube": "^0.2.3",
+    "ngWig": "ng-wig#^2.3.4"
   },
   "resolutions": {
     "angular": "~1.3"

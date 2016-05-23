@@ -1,0 +1,80 @@
+<section class="portfolio-header container" layout="row">
+  <div class="devin-pic">
+    <img  alt="Devin Cook" src="/modules/core/client/img/devin.jpg" />
+  </div>
+  <div class="header-text">
+
+    <h1 class="page-title md-display-1">Devin Cook</h1>
+    <span class="page-title md-subhead">Front-End Developer / Interaction Designer {{$root.activeTab}}</span>
+  </div>
+</section>
+
+ <ddn-sticky-wrapper> 
+<section class="navigation-bar" ng-controller="HeaderController">
+  <!-- {{currentState}} -->
+  <div class="container">
+    <div class="user-menu" ng-show="authentication.user">
+      <!-- <span class="profile-pic">
+        <img ng-src="{{authentication.user.profileImageURL}}" />
+      </span>
+      <span class="user-menu-text">
+        <span ng-bind="authentication.user.username"></span>
+      </span> -->
+
+      <md-menu md-position-mode="target-right target" md-offset="-216 64">
+        <md-button class="no-margin" md-menu-origin aria-label="open user menu" ng-click="openMenu($mdOpenMenu, $event)">
+          <!-- <md-icon class="material-icons">more_vert</md-icon> -->
+          <span class="profile-pic">
+            <img ng-src="{{authentication.user.profileImageURL}}"/>
+          </span>
+          <span class="user-menu-text">
+            <span ng-bind="authentication.user.username"></span>
+          </span>
+        </md-button>
+        <md-menu-content width="4" class="user-menu-dropdown">
+          <md-menu-item>
+            <md-button ng-click="go('settings.profile')">
+              <md-icon class="material_icons" md-menu-align-target>person</md-icon>
+              Edit Profile
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.picture')">
+              <md-icon class="material_icons" md-menu-align-target>photo</md-icon>
+              Change Profile Picture
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.password')">
+              <md-icon class="material_icons" md-menu-align-target>security</md-icon>
+              Change Password
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="go('settings.accounts')">
+              <md-icon class="material_icons" md-menu-align-target>share</md-icon>
+              Manage Social Accounts
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button href="/api/auth/signout" target="_self">
+              <md-icon class="material_icons" md-menu-align-target>exit_to_app</md-icon>
+              Sign Out
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+
+    </div>
+    <md-tabs md-stretch-tabs>
+      <md-tab md-active="item.title === $root.activeTab" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);">{{item.title}}</md-tab>
+      <!--<md-tab md-active="item.title === $root.activeTab" ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ui-sref="{{item.state}}">{{item.title}}</md-tab>-->
+      <!--<md-tab ui-sref="authentication.signup" ng-if="!authentication.user">Sign Up</md-tab>
+      <md-tab ui-sref="authentication.signin" ng-if="!authentication.user">Sign In</md-tab>-->
+    </md-tabs>
+  </div>
+</section>
+
+<!-- <div>Header</div> -->
+ </ddn-sticky-wrapper> 

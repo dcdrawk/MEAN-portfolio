@@ -7,6 +7,7 @@ var _ = require('lodash'),
   defaultAssets = require('./config/assets/default'),
   testAssets = require('./config/assets/test'),
   testConfig = require('./config/env/test'),
+  
   fs = require('fs'),
   path = require('path');
 

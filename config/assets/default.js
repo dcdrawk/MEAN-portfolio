@@ -47,6 +47,7 @@ module.exports = {
       'modules/**/*/img/**/*.png',
       'modules/**/*/img/**/*.gif',
       'modules/**/*/img/**/*.svg'
+    ],
     images: [
       'public/images/**/*.jpg'
     ],

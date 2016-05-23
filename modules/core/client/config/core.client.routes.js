@@ -50,6 +50,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
         data: {
           ignoreState: true,
           pageTitle: 'Forbidden'
+        }
       })
       .state('full', {
         url: '/full',

@@ -1,3 +1,12 @@
+## MEAN Portfolio
+
+My first attempt at using the MEAN stack to create a portfolio with dynamic content. I make use of MongoDB, ExpressJS, AngularJS, and Node.js as the backbone of this app.
+
+I wanted to challenge myself by building a new portfolio using new and exciting design patterns.
+
+Below is the default readme included with the MEAN.JS stack.
+
+
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/meanjs/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
